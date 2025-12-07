@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Campanula - Duyurular ve Kampanyalar">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Campanula - Duyurular</title>
+
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        /* --- GENEL AYARLAR --- */
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, button, .nav-link, .modal-body {
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        /* --- AMADO DROPDOWN MENÜ DÜZELTMELERİ --- */
+
+        /* 1. KUTU AYARLARI */
+        .amado-nav li .dropdown-menu {
+            border: none !important;
+            border-radius: 0 !important;
+            background-color: #f5f7fa !important; /* Hafif gri zemin (Siteyle uyumlu) */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+            padding: 10px 0 !important;
+            min-width: 240px;
+            /* KUTUYU YUKARI ÇEKME KODU */
+            margin-top: 0 !important; /* Boşluğu sıfırladık */
+            top: 100%; /* Tam altına yapışmasını sağlar */
+        }
+
+            /* 2. LİNKLERİN GÖRÜNÜMÜ */
+            .amado-nav li .dropdown-menu .dropdown-item {
+                font-size: 13px !important;
+                text-transform: uppercase;
+                color: #333 !important; /* Koyu gri yazı */
+                padding: 8px 25px !important; /* Satır araları sıkı olsun */
+                font-family: 'Roboto', sans-serif !important;
+                font-weight: 500 !important;
+                transition: all 0.3s ease;
+                letter-spacing: 0.5px;
+                position: relative; /* Sarı çizgileri yok etmek için gerekli */
+            }
+
+                /* 3. SARI ÇİZGİLERİ YOK ETME */
+                .amado-nav li .dropdown-menu .dropdown-item::after,
+                .amado-nav li .dropdown-menu .dropdown-item::before {
+                    display: none !important;
+                    content: none !important;
+                    width: 0 !important;
+                    opacity: 0 !important;
+                }
+
+                /* 4. HOVER */
+                .amado-nav li .dropdown-menu .dropdown-item:hover,
+                .amado-nav li .dropdown-menu .dropdown-item:focus {
+                    background-color: #e9ecef !important; /* Üstüne gelince hafif koyulaşsın */
+                    color: #000000 !important; /* Yazı siyah olsun */
+                    padding-left: 35px !important; /* Hafif sağa kaysın */
+                    text-decoration: none !important; /* Altı çizilmesin */
+                }
+
+        /* 5. AYIRICI ÇİZGİ */
+        .dropdown-divider {
+            border-top: 1px solid #ddd !important;
+            margin: 5px 0 !important;
+        }
+        /* --- DUYURU SAYFASI ÖZEL STİLLERİ --- */
+        .page-content-wrapper {
+            width: 100%;
+            padding: 50px 5%;
+        }
+
+        @media (min-width: 992px) {
+            .page-content-wrapper {
+                flex: 0 0 calc(100% - 320px);
+                max-width: calc(100% - 320px);
+            }
+        }
+
+        /* Hero Alanı */
+        .announcement-hero {
+            position: relative; height: 250px; border-radius: 15px;
+            background: #333 url("img/core-img/lazlo.png") center/cover no-repeat; 
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; margin-bottom: 50px;
+        }
+        .announcement-hero::before {
+            content: ""; position: absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .announcement-hero h2 { color: #fff; font-size: 42px; font-weight: 700; text-transform: uppercase; z-index: 1; letter-spacing: 2px; text-align: center; }
+
+        /* Duyuru Kartları */
+        .announcement-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: 0.3s;
+            border-left: 5px solid #fbb710; /* Sol şerit */
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .announcement-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        
+        .ann-date {
+            background: #fbb710;
+            color: #000;
+            font-size: 12px;
+            font-weight: 700;
+            padding: 5px 15px;
+            display: inline-block;
+            margin-left: auto; /* Sağa yasla */
+            border-bottom-left-radius: 10px;
+        }
+
+        .ann-content { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .ann-title { font-size: 20px; font-weight: 700; margin-bottom: 15px; color: #333; }
+        .ann-excerpt { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+        
+        .read-more-btn {
+            color: #fbb710;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            background: transparent;
+            padding: 0;
+            text-align: left;
+        }
+        .read-more-btn:hover { color: #333; letter-spacing: 1px; }
+
+        /* MODAL STİLLERİ */
+        .modal-header { border-bottom: 2px solid #fbb710; background: #f9f9f9; }
+        .modal-title { font-weight: 700; color: #333; }
+        .modal-body { padding: 30px; line-height: 1.8; color: #555; }
+        
+        /* Dosya Eki Alanı */
+        .file-attachment {
+            background: #f1f1f1;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-flex;
+            align-items: center;
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .file-attachment:hover { background: #e0e0e0; color: #000; }
+        .file-attachment i { font-size: 18px; margin-right: 10px; color: #d32f2f; /* PDF kırmızısı */ }
+        .file-word i { color: #2b579a; /* Word mavisi */ }
+
+        /* Footer Sabitleme */
+        html, body { height: 100%; margin: 0; }
+        body { display: flex; flex-direction: column; }
+        .main-content-wrapper { flex: 1; }
+        .footer_area { flex-shrink: 0; width: 100%; }
+
+    </style>
+</head>
+
+<body>
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close"><i class="fa fa-close" aria-hidden="true"></i></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Aradığınızı yazın...">
+                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <div class="mobile-nav">
+            <div class="amado-navbar-brand"><a href="index.html"><img src="img/core-img/logo.png" alt=""></a></div>
+            <div class="amado-navbar-toggler"><span></span><span></span><span></span></div>
+        </div>
+
+        <header class="header-area clearfix">
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <a href="index.html"><img src="img/core-img/logo.png" alt="KampDoğa Logo"></a>
+            </div>
+
+            <nav class="amado-nav">
+                <ul>
+                    <li><a href="index.html">Anasayfa</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ürünlerimiz
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="shop.html?group=ekipman">Kamp Ekipmanı</a>
+                            <a class="dropdown-item" href="shop.html?group=mutfak">Kamp Mutfak Gereçleri</a>
+                            <a class="dropdown-item" href="shop.html?group=giyim">Giyim & Outdoor</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="shop.html?group=all">Tümünü Gör</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUnits" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Birimlerimiz
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUnits">
+                        <a class="dropdown-item" href="teknik-servis.html">Teknik Servis</a>
+                        <a class="dropdown-item" href="musteri-hizmetleri.html">Müşteri Hizmetleri</a>
+                        <a class="dropdown-item" href="lojistik.html">Lojistik & Depo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="admin-login.html" style="color: #fbb710; font-weight: bold;">Yönetici Paneli</a>
+                    </div>
+                </li>
+                    <li><a href="duyurular.html">Duyurular</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="vizyon.html">Misyon & Vizyon</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+            <br><br>
+            <div class="cart-fav-search mb-100">
+                <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Sepetim <span>(0)</span></a>
+                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favoriler</a>
+                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Ara</a>
+            </div>
+            <div class="social-info d-flex justify-content-between">
+                <a href="https://github.com/merwf" target="_blank">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/merve-gazioğlu-047648235" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/elf_merve8/?next=%2F" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+        </header>
+
+        <div class="page-content-wrapper clearfix">
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="announcement-hero">
+                        <h2>DUYURULAR</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="announcement-card">
+                        <span class="ann-date">10.12.2025</span>
+                        <div class="ann-content">
+                            <h4 class="ann-title">Büyük Kış İndirimi Başladı!</h4>
+                            <p class="ann-excerpt">Tüm kışlık mont, uyku tulumu ve botlarda %40'a varan indirimler Campanula mağazalarında ve online'da.</p>
+                            <button type="button" class="read-more-btn" data-toggle="modal" data-target="#modalDuyuru1">
+                                Detayları Oku <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="announcement-card">
+                        <span class="ann-date">05.12.2025</span>
+                        <div class="ann-content">
+                            <h4 class="ann-title">İzmit Mağaza Açılışı</h4>
+                            <p class="ann-excerpt">Yeni konsept mağazamız İzmit Symbol AVM'de açıldı. Açılışa özel sürpriz hediyeler sizi bekliyor.</p>
+                            <button type="button" class="read-more-btn" data-toggle="modal" data-target="#modalDuyuru2">
+                                Detayları Oku <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="announcement-card">
+                        <span class="ann-date">28.11.2025</span>
+                        <div class="ann-content">
+                            <h4 class="ann-title">Kış Kampı Eğitimleri</h4>
+                            <p class="ann-excerpt">Profesyonel dağcılarımız eşliğinde Kartepe'de düzenlenecek "Temel Kış Kampçılığı" eğitimi kayıtları başladı.</p>
+                            <button type="button" class="read-more-btn" data-toggle="modal" data-target="#modalDuyuru3">
+                                Detayları Oku <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="announcement-card">
+                        <span class="ann-date">15.11.2025</span>
+                        <div class="ann-content">
+                            <h4 class="ann-title">Kargo Ücretlerinde Güncelleme</h4>
+                            <p class="ann-excerpt">Lojistik maliyetlerindeki değişimler nedeniyle kargo baremlerimizde güncelleme yapılmıştır.</p>
+                            <button type="button" class="read-more-btn" data-toggle="modal" data-target="#modalDuyuru4">
+                                Detayları Oku <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="announcement-card">
+                        <span class="ann-date">01.11.2025</span>
+                        <div class="ann-content">
+                            <h4 class="ann-title">Sürdürülebilirlik Raporu 2024</h4>
+                            <p class="ann-excerpt">Campanula olarak doğayı korumak için attığımız adımları içeren yıllık raporumuz yayımlandı.</p>
+                            <button type="button" class="read-more-btn" data-toggle="modal" data-target="#modalDuyuru5">
+                                Detayları Oku <i class="fa fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-30">
+                <div class="col-12">
+                    <nav aria-label="navigation">
+                        <ul class="pagination justify-content-end">
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+
+    <div class="modal fade" id="modalDuyuru1" tabindex="-1" role="dialog" aria-labelledby="m1Title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="m1Title">Büyük Kış İndirimi Başladı!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/bg-img/slider2.jpg" alt="Kampanya" style="width:100%; border-radius:10px; margin-bottom:20px;">
+                    <p>Değerli Müşterilerimiz,</p>
+                    <p>Kış sezonuna hazırlık yapmak isteyen doğaseverler için beklenen an geldi! Tüm Campanula mağazalarında ve online sitemizde geçerli olmak üzere seçili kış ürünlerinde %40'a varan indirimler başladı.</p>
+                    <p><strong>Kampanya Detayları:</strong></p>
+                    <ul>
+                        <li>- Uyku tulumlarında net %25 indirim.</li>
+                        <li>- 3.000 TL üzeri alışverişlerde anında 500 TL hediye çeki.</li>
+                        <li>- Kampanya stoklarla sınırlıdır.</li>
+                    </ul>
+                    <a href="#" class="file-attachment"><i class="fa fa-file-pdf-o"></i> Kampanya_Katalogu.pdf İndir</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                    <a href="shop.html" class="btn amado-btn">Alışverişe Başla</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDuyuru2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">İzmit Mağaza Açılışı</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="img/bg-img/slider1.jpg" alt="Mağaza" style="width:100%; border-radius:10px; margin-bottom:20px;">
+                    <p>Campanula ailesi büyüyor! Yeni konsept mağazamızla İzmit Symbol AVM'de hizmetinizdeyiz. 500 m²'lik yeni mağazamızda, çadır kurulum alanları ve deneyimleme bölgeleri bulunmaktadır.</p>
+                    <p>Açılış haftasına özel tüm ürünlerde %10 ekstra indirim sizleri bekliyor.</p>
+                    <a href="#" class="file-attachment file-word"><i class="fa fa-file-word-o"></i> Basin_Bulteni.docx İndir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDuyuru3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Kış Kampı Eğitimleri</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Kartepe'nin eşsiz doğasında, profesyonel eğitmenlerimizle "Temel Kış Kampçılığı ve Hayatta Kalma" eğitimi düzenliyoruz. Kontenjan 20 kişi ile sınırlıdır.</p>
+                    <p><strong>Tarih:</strong> 20-21 Aralık 2025</p>
+                    <p><strong>Yer:</strong> Kartepe Kuzuyayla Kamp Alanı</p>
+                    <a href="#" class="file-attachment"><i class="fa fa-file-pdf-o"></i> Egitim_Programi.pdf İndir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDuyuru4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Kargo Ücretlerinde Güncelleme</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Değerli Müşterilerimiz,</p>
+                    <p>Lojistik sektöründeki maliyet artışları nedeniyle kargo baremlerimizde güncelleme yapılmıştır. 15.11.2025 tarihinden itibaren geçerli olmak üzere:</p>
+                    <ul>
+                        <li>- 1000 TL altı siparişlerde kargo ücreti: 50 TL</li>
+                        <li>- 1000 TL ve üzeri siparişlerde: <strong>ÜCRETSİZ</strong></li>
+                    </ul>
+                    <p>Anlayışınız için teşekkür ederiz.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalDuyuru5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sürdürülebilirlik Raporu 2024</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Campanula olarak, doğadan aldığımız ilhamı doğaya geri verme sorumluluğumuzun farkındayız. 2024 yılında karbon ayak izimizi %20 oranında azalttık.</p>
+                    <p>Paketlemelerimizde %100 geri dönüştürülmüş malzeme kullanmaya başladık.</p>
+                    <a href="#" class="file-attachment"><i class="fa fa-file-pdf-o"></i> 2024_Raporu.pdf İndir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer_area clearfix" style="background-color: #222; padding-top: 70px; padding-bottom: 20px; color: #b5b5b5;">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <div class="footer-logo mb-4">
+                            <a href="index.html"><img src="img/core-img/logo2.png" alt="Campanula" style="max-height: 60px;"></a>
+                        </div>
+                        <p style="font-size: 14px; line-height: 1.6;">Doğayla buluşmanızda yanınızdayız. En kaliteli kamp ekipmanları burada.</p>
+                        <div class="footer-social-info mt-4">
+                            <a href="https://github.com/merwf" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="GitHub"><i class="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/merve-gazioğlu-047648235" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/elf_merve8/?next=%2F" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="Instagram"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Kurumsal</h5>
+                        <ul style="padding: 0; list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="duyurular.html" style="color: #ddd; transition: 0.3s;">Duyurular</a></li>
+                            <li style="margin-bottom: 10px;"><a href="hakkimizda.html" style="color: #ddd; transition: 0.3s;">Hakkımızda</a></li>
+                            <li style="margin-bottom: 10px;"><a href="vizyon.html" style="color: #ddd; transition: 0.3s;">Misyon & Vizyon</a></li>
+                            <li style="margin-bottom: 10px;"><a href="iletisim.html" style="color: #ddd; transition: 0.3s;">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Yardım</h5>
+                        <ul style="padding: 0; list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Sipariş Takibi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">İade ve Değişim</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Kargo ve Teslimat</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Gizlilik Politikası</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Bize Ulaşın</h5>
+                        <p style="margin-bottom: 15px;">
+                            <i class="fa fa-map-marker" style="color: #fbb710; display: block; font-size: 24px; margin-bottom: 10px;"></i>
+                            Yahya Kaptan Mah. Şehit Ergün Köncü Sok. No: 12, İzmit/Kocaeli
+                        </p>
+                        <p style="margin-bottom: 15px;">
+                            <span style="display: block;">info@campanula.com</span>
+                            <span style="display: block;">+90 262 123 45 67</span>
+                        </p>
+                        <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 5px; margin-top: 15px;">
+                            <i class="fa fa-clock-o" style="color: #fbb710; margin-right: 5px;"></i>
+                            <span style="font-size: 13px;">Pzt - Cmt: 09:00 - 19:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center;">
+                        <p style="color: #fff; font-size: 14px; margin-bottom: 5px; font-weight: 500;">
+                            Tasarım & Kodlama: Merve Gazioğlu - 231307100
+                        </p>
+                        <p style="font-size: 12px; color: #666;">
+                            Telif Hakkı &copy; <script>document.write(new Date().getFullYear());</script> Campanula Outdoor. Tüm hakları saklıdır.
+                        </p>
+                        <div class="mt-2">
+                            <img src="img/core-img/paypal.png" alt="Visa" style="height: 20px; opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/active.js"></script>
+    <script src="js/sepet.js"></script>
+</body>
+</html>

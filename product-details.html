@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Kamp ve Outdoor Ürün Detayı">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Campanula - Ürün Detayı</title>
+
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, button, .nav-link {
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        /* --- AMADO DROPDOWN MENÜ DÜZELTMELERİ --- */
+        .amado-nav li .dropdown-menu {
+            border: none !important;
+            border-radius: 0 !important;
+            background-color: #f5f7fa !important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+            padding: 10px 0 !important;
+            min-width: 240px;
+            margin-top: 0 !important;
+            top: 100%;
+        }
+
+            .amado-nav li .dropdown-menu .dropdown-item {
+                font-size: 13px !important;
+                text-transform: uppercase;
+                color: #333 !important;
+                padding: 8px 25px !important;
+                font-family: 'Roboto', sans-serif !important;
+                font-weight: 500 !important;
+                transition: all 0.3s ease;
+                letter-spacing: 0.5px;
+                position: relative;
+            }
+
+                .amado-nav li .dropdown-menu .dropdown-item::after,
+                .amado-nav li .dropdown-menu .dropdown-item::before {
+                    display: none !important;
+                    content: none !important;
+                    width: 0 !important;
+                    opacity: 0 !important;
+                }
+
+                .amado-nav li .dropdown-menu .dropdown-item:hover,
+                .amado-nav li .dropdown-menu .dropdown-item:focus {
+                    background-color: #e9ecef !important;
+                    color: #000000 !important;
+                    padding-left: 35px !important;
+                    text-decoration: none !important;
+                }
+
+        .dropdown-divider {
+            border-top: 1px solid #ddd !important;
+            margin: 5px 0 !important;
+        }
+
+        /* --- YORUM ALANI STİLLERİ --- */
+        .reviews-section {
+            margin-top: 60px;
+            border-top: 1px solid #ebebeb;
+            padding-top: 40px;
+        }
+
+        .review-summary-card {
+            background-color: #f5f7fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            height: 100%;
+        }
+
+        .big-score {
+            font-size: 60px;
+            font-weight: 700;
+            color: #333;
+            line-height: 1;
+        }
+
+        .total-reviews {
+            color: #6b6b6b;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .single-review {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 15px;
+            background: #fff;
+        }
+
+        .single-review:last-child {
+            border-bottom: none;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .reviewer-name {
+            font-weight: 700;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .verified-badge {
+            color: #28a745;
+            font-size: 13px;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .review-date {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .review-comment {
+            color: #555;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .star-rating i {
+            color: #fbb710;
+            font-size: 14px;
+            margin-right: 2px;
+        }
+
+        .empty-star {
+            color: #ddd !important;
+        }
+        
+        /* Tarayıcının varsayılan number input oklarını gizle */
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+            appearance: textfield;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close"><i class="fa fa-close" aria-hidden="true"></i></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Aradığınız kelimeyi yazın...">
+                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <div class="mobile-nav">
+            <div class="amado-navbar-brand"><a href="index.html"><img src="img/core-img/logo.png" alt=""></a></div>
+            <div class="amado-navbar-toggler"><span></span><span></span><span></span></div>
+        </div>
+
+        <header class="header-area clearfix">
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <a href="index.html"><img src="img/core-img/logo.png" alt="KampDoğa Logo"></a>
+            </div>
+
+            <nav class="amado-nav">
+                <ul>
+                    <li><a href="index.html">Anasayfa</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ürünlerimiz
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="shop.html?group=ekipman">Kamp Ekipmanı</a>
+                            <a class="dropdown-item" href="shop.html?group=mutfak">Kamp Mutfak Gereçleri</a>
+                            <a class="dropdown-item" href="shop.html?group=giyim">Giyim & Outdoor</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="shop.html?group=all">Tümünü Gör</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUnits" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Birimlerimiz
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUnits">
+                        <a class="dropdown-item" href="teknik-servis.html">Teknik Servis</a>
+                        <a class="dropdown-item" href="musteri-hizmetleri.html">Müşteri Hizmetleri</a>
+                        <a class="dropdown-item" href="lojistik.html">Lojistik & Depo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="admin-login.html" style="color: #fbb710; font-weight: bold;">Yönetici Paneli</a>
+                    </div>
+                </li>
+                    <li><a href="duyurular.html">Duyurular</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="vizyon.html">Misyon & Vizyon</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+            <br><br>
+            <div class="cart-fav-search mb-100">
+                <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Sepetim <span>(0)</span></a>
+                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favoriler</a>
+                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Ara</a>
+            </div>
+            <div class="social-info d-flex justify-content-between">
+                <a href="https://github.com/merwf" target="_blank">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/merve-gazioğlu-047648235" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/elf_merve8/?next=%2F" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+        </header>
+        <div class="single-product-area section-padding-100 clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mt-50">
+                                <li class="breadcrumb-item"><a href="index.html">Anasayfa</a></li>
+                                <li class="breadcrumb-item"><a href="shop.html">Ürünler</a></li>
+                                <li class="breadcrumb-item"><a href="#" id="breadcrumb-category">Kategori</a></li>
+                                <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-name">Ürün Adı</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-lg-7">
+                        <div class="single_product_thumb">
+                            <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators" id="slider-indicators">
+                                </ol>
+                                <div class="carousel-inner" id="slider-inner">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-5">
+                        <div class="single_product_desc">
+                            <div class="product-meta-data">
+                                <div class="line"></div>
+                                <p class="product-price" id="product-price">0 TL</p>
+                                <a href="javascript:void(0)">
+                                    <h6 id="product-name">Ürün Yükleniyor...</h6>
+                                </a>
+                                <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                                    <div class="ratings" id="product-top-stars">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="review">
+                                        <a href="#">Yorum Yaz</a>
+                                    </div>
+                                </div>
+                                <p class="avaibility"><i class="fa fa-circle"></i> Stokta Var</p>
+                            </div>
+
+                            <div class="short_overview my-5">
+                                <p id="product-desc">Ürün açıklaması yükleniyor...</p>
+                            </div>
+                            <div id="extra-info-area" style="margin-bottom: 50px;">
+                            </div>
+                            <form class="cart clearfix" method="post" action="cart.html">
+                                <div class="cart-btn d-flex mb-50">
+                                    <p>Adet</p>
+                                    <div class="quantity">
+                                        <span class="qty-minus"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="10" name="quantity" value="1">
+                                        <span class="qty-plus"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                                <button type="submit" name="addtocart" value="5" class="btn amado-btn">Sepete Ekle</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row reviews-section" id="reviews-container" style="display: none;">
+                    <div class="col-12">
+                        <h2 class="mb-30">Müşteri Değerlendirmeleri</h2>
+                    </div>
+
+                    <div class="col-12 col-lg-4 mb-50">
+                        <div class="review-summary-card">
+                            <div class="big-score" id="average-score">0.0</div>
+                            <div class="star-rating mb-2" id="average-stars"></div>
+                            <p class="total-reviews"><span id="total-review-count">0</span> Değerlendirme</p>
+                            <button class="btn amado-btn mt-3">Değerlendirme Yaz</button>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-8">
+                        <div id="review-list-area">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer_area clearfix" style="background-color: #222; padding-top: 70px; padding-bottom: 20px; color: #b5b5b5;">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <div class="footer-logo mb-4">
+                            <a href="index.html"><img src="img/core-img/logo2.png" alt="Campanula" style="max-height: 60px;"></a>
+                        </div>
+                        <p style="font-size: 14px; line-height: 1.6;">Doğayla buluşmanızda yanınızdayız. En kaliteli kamp ekipmanları burada.</p>
+                        
+                        <div class="footer-social-info mt-4">
+                            <a href="https://github.com/merwf" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="GitHub"><i class="fa fa-github"></i></a>
+                            
+                            <a href="https://www.linkedin.com/in/merve-gazioğlu-047648235" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                            
+                            <a href="https://www.instagram.com/elf_merve8/?next=%2F" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="Instagram"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Kurumsal</h5>
+                        <ul style="padding: 0; list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="duyurular.html" style="color: #ddd; transition: 0.3s;">Duyurular</a></li>
+                            <li style="margin-bottom: 10px;"><a href="hakkimizda.html" style="color: #ddd; transition: 0.3s;">Hakkımızda</a></li>
+                            <li style="margin-bottom: 10px;"><a href="vizyon.html" style="color: #ddd; transition: 0.3s;">Misyon & Vizyon</a></li>
+                            <li style="margin-bottom: 10px;"><a href="iletisim.html" style="color: #ddd; transition: 0.3s;">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Yardım</h5>
+                        <ul style="padding: 0; list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Sipariş Takibi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">İade ve Değişim</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Kargo ve Teslimat</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Gizlilik Politikası</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Bize Ulaşın</h5>
+                        
+                        <p style="margin-bottom: 15px;">
+                            <i class="fa fa-map-marker" style="color: #fbb710; display: block; font-size: 24px; margin-bottom: 10px;"></i>
+                            Yahya Kaptan Mah. Şehit Ergün Köncü Sok. No: 12, İzmit/Kocaeli
+                        </p>
+                        
+                        <p style="margin-bottom: 15px;">
+                            <span style="display: block;">info@campanula.com</span>
+                            <span style="display: block;">+90 262 123 45 67</span>
+                        </p>
+
+                        <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 5px; margin-top: 15px;">
+                            <i class="fa fa-clock-o" style="color: #fbb710; margin-right: 5px;"></i>
+                            <span style="font-size: 13px;">Pzt - Cmt: 09:00 - 19:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center;">
+                        <p style="color: #fff; font-size: 14px; margin-bottom: 5px; font-weight: 500;">
+                            Tasarım & Kodlama: Merve Gazioğlu - 231307100
+                        </p>
+                        <p style="font-size: 12px; color: #666;">
+                            Telif Hakkı &copy; <script>document.write(new Date().getFullYear());</script> Campanula Outdoor. Tüm hakları saklıdır.
+                        </p>
+                        <div class="mt-2">
+                            <img src="img/core-img/paypal.png" alt="Visa" style="height: 20px; opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/active.js"></script>
+    <script src="js/sepet.js"></script>
+
+    
+    <script>
+        const products = {
+                // ÇADIRLAR
+                "cadir1": {
+                    name: "4 Kişilik Kamp Çadırı",
+                    category: "Kamp Çadırları",
+                    catCode: "cadir",
+                    price: "6.290 TL",
+                    desc: "Pollü yapısı sayesinde kolayca kurulabilen bu çadır, kolaylık arayan 4 kampçı için tasarlandı.",
+                    images: ["img/product-img/product1.jpg", "img/product-img/product2.jpg"],
+                    reviews: [
+                        { user: "Ahmet Y.", date: "21.11.2025", rating: 5, comment: "Harika bir ürün, kurulumu gerçekten 10 dakika sürdü. Yağmurda su geçirmedi.", verified: true },
+                        { user: "Selin K.", date: "15.11.2025", rating: 4, comment: "Genişliği çok iyi ama taşıma çantası biraz daha büyük olabilirdi. Yine de tavsiye ederim.", verified: true },
+                        { user: "Murat T.", date: "02.11.2025", rating: 5, comment: "Fiyat performans ürünü. Campanula'nın kalitesi şaşırtmadı.", verified: true },
+                        { user: "Ayşe B.", date: "28.10.2025", rating: 5, comment: "Çok memnun kaldık, ailecek sığdık.", verified: false }
+                    ]
+                },
+                "cadir2": {
+                    name: "3 Kişilik Kamp Çadırı",
+                    category: "Kamp Çadırları",
+                    catCode: "cadir",
+                    price: "4.300 TL",
+                    desc: "2 Seconds bu model, çadırınızı hiç vakit kaybetmeden kurmanız için tasarlandı. Katlama sistemi sayesinde kolayca katlanabilir. Modern ve az yer kaplayan tasarımı ile ve her şeyden önce Fresh& Black teknolojisi sayesinde size rahatlık sağlayacak.Rahat bir uyku için havalandırma ve karanlık sunacak.",
+                    images: ["img/product-img/UckisiCadir3.jpg", "img/product-img/UckisiCadir2.jpg", "img/product-img/UckisiCadir.jpg", "img/product-img/UckisiCadir4.jpg"],
+                    reviews: [
+                        { user: "Caner E.", date: "10.11.2025", rating: 5, comment: "Çok pratik.", verified: true }
+                    ]
+                },
+                "cadir3": {
+                    name: "2 Kişilik Kamp Çadırı",
+                    category: "Kamp Çadırları",
+                    catCode: "cadir",
+                    price: "7.200 TL",
+                    desc: "Bu ön montajı yapılmış çadır, 2 yan kubbesi sayesinde 2 kişiye ideal yaşam alanı ve rahatlık sunacak şekilde tasarlandı. 2 kişilik MT 500 çadır kendi kendine ayakta durabilir ve az yer kaplar yapıdadır, ideal yaşam alanı sunar ve 3 mevsimde kullanılabilir.Buna ek olarak 2 yan kapısı ile çok kullanışlıdır.",
+                    images: ["img/product-img/ikiKisiCadir3.jpg", "img/product-img/ikiKisiCadir4.jpg", "img/product-img/ikiKisiCadir.jpg", "img/product-img/ikiKisiCadir2.jpg"],
+                    reviews: [
+                        { user: "Uğur B.", date: "21.11.2025", rating: 5, comment: "Hem çantama sığıyor hem de çok dayanıklı", verified: true },
+                        { user: "Cem K.", date: "15.11.2025", rating: 4, comment: "Çadır gerçekten çok güzel rüzgar direnci muhteşem.ama iki giriş kapısınında fermuarları bozuldu.5 yada 6 saat yağmura denk geldim içeri su aldı.bütün kamp malzemelerimi decatlondan aldım fakat çadır dan yana şansım tutmadı.çadır güzel hafif kurması kolay rüzgar direnci var fakat fermuar ve su alması beni üzdü.belkide birtek bende olmuştur bilmiyorum iyi günler.", verified: false },
+                        { user: "Ahmet L.", date: "02.11.2025", rating: 5, comment: "Katlanınca az yer tutması ve nispeten hafif olması güzel. dolayısıyla taşıması kolay kamp çantanıza bile sığacaktır.", verified: true },
+                        { user: "Hamza B.", date: "28.10.2025", rating: 4, comment: "Ürünü ev ortamın da inceledim gayet kaliteli duruyor tek kişi kurmak biraz zor iki kişi çok rahat kurulum yapabilir asil performansını trekking e çıktığım zaman deneyimleyip güncelliyeceğim", verified: true }
+                    ]
+                },
+                "cadir4": {
+                    name: "Gölgelik - 6 Kişilik Çadır",
+                    category: "Kamp Çadırları",
+                    catCode: "cadir",
+                    price: "7.800 TL",
+                    desc: "Bu 6 kişilik kamp salonu, korunaklı alanını genişletmek, kötü hava koşulları ve böceklerden korunmak isteyen kullanıcılar için tasarlandı. Motivasyonumuzu öğrenmek ister misiniz? Size, temel yaşam ihtiyaçlarınız için büyük bir odaya sahip, kurulumu kolay pollü bir salon sunmak Kendi kendine ayakta duran yapısıyla kolayca taşınabilir.",
+                    images: ["img/product-img/AltiKisiCadir4.jpg", "img/product-img/AltiKisiCadir.jpg", "img/product-img/AltiKisiCadir2.jpg", "img/product-img/AltiKisiCadir3.jpg"],
+                    reviews: [
+                        { user: "Saadet A.", date: "21.11.2025", rating: 5, comment: "Çadır boy olarak çok güzel içinde rahat oturup hareket edebiliyorsunuz. yaz ve bahar ayları için ideal", verified: true },
+                        { user: "Bahaddin D.", date: "15.11.2025", rating: 5, comment: "Yüzlerce çadır inceledim, onlarca video izledim. Yaz kampı için iyiki almışım diyeceğim bir çadır oldu. 8 gün boyunca yoğun ilgiden sıkıldık herkes sordu nerden aldınız diye. İçi o kadar ferah ve rahat ki ayakta üstünüzü rahatça değiştirebilirsiniz üç kişilik bir aile için oldukça kullanışlı.", verified: true },
+                        { user: "Ahmet L.", date: "02.11.2025", rating: 5, comment: "Çok güzel kullanışlı", verified: true },
+                        { user: "Umut U.", date: "28.10.2025", rating: 5, comment: "Ürün öncelikler isteyerek aldığım ve deneyimleme şansım oldu. Bence çok iyi . Öyle yüksek beklenti içine girmemiştim ama ziyadesi ile beni memnun etti ben çok mutluyum aldığım için", verified: true }
+                    ]
+                },
+
+                // SANDALYELER
+                "sandalye1": {
+                    name: "Kamp Sandalyesi (Katlanır)",
+                    category: "Kamp Sandalyesi",
+                    catCode: "sandalye",
+                    price: "1.200 TL",
+                    desc: "Bu katlanır kamp sandalyesi, geniş oturma yeri ile rahatça kullanabilmeniz için tasarlandı. Bardak bölmesi soğuk içeceklerinizi koymak için mükemmeldir. Hızlı ve kolay bir şekilde katlanır.Katlı halde az yer kaplar ve çadırınızın bir köşesine sığabilir.Entegre kayışı sayesinde kolayca taşıyacaksınız.",
+                    images: ["img/product-img/sandalye.jpg", "img/product-img/sandalye2.jpg"],
+                    reviews: [
+                        { user: "Mehmet K.", date: "05.12.2025", rating: 4, comment: "Rahat ama biraz ağır.", verified: true }
+                    ]
+                },
+                "sandalye2": {
+                    name: "Kamp Taburesi",
+                    category: "Kamp Sandalyesi",
+                    catCode: "sandalye",
+                    price: "450 TL",
+                    desc: "Bu basit ve pratik tabure, yapacağınız ilk gezintileriniz için tasarlandı. Bu hafif, az yer kaplayan ve kullanımı basit tabure kolayca taşınabilir.Tüm dayanıklılık testlerinden geçmiş kullanışlı tabure.",
+                    images: ["img/product-img/tabure.jpg", "img/product-img/tabure2.jpg"],
+                    reviews: [
+                        { user: "Ece A.", date: "14.03.2024", rating: 4, comment: "Küçük ama sağlam, kısa süreli oturmalar için ideal.", verified: true },
+                        { user: "Cihan D.", date: "02.12.2023", rating: 3, comment: "Fiyat performans olarak fena değil, uzun oturunca rahatsız ediyor.", verified: false }
+                    ]
+                },
+                "sandalye3": {
+                    name: "Katlanabilir Alçak Sandalye",
+                    category: "Kamp Sandalyesi",
+                    catCode: "sandalye",
+                    price: "2.000 TL",
+                    desc: "Alçak kamp sandalyesi mükemmel desteği ve 29 cm'lik ideal oturma yüksekliği ile tasarlandı. Toprak ve doğayla iç içe, rahatınıza bakın! Yalnızca 1, 1 kg ağırlığındaki bu alçak sandalye, saklama kılıfı sayesinde her yere götürülebilir. 110 kg'ye kadar destekler. Entegre lastikleri sayesinde hızlı açılır.",
+                    images: ["img/product-img/alcakSandalye.jpg", "img/product-img/alcakSandalye2.jpg"],
+                    reviews: [
+                        { user: "Arda M.", date: "18.07.2024", rating: 5, comment: "Kamp ateşi başında kullanmak için mükemmel yükseklik.", verified: true },
+                        { user: "Gamze R.", date: "09.11.2023", rating: 4, comment: "Kumaşı kaliteli ama taşıma kılıfı daha sağlam olabilirdi.", verified: true }
+                    ]
+
+                },
+
+                // TERMOSLAR
+                "termos1": {
+                    name: "Paslanmaz Çelik Termos 1L",
+                    category: "Termos & Matara",
+                    catCode: "termos",
+                    price: "900 TL",
+                    desc: "Isı yalıtımlı ve dayanıklı bu büyük termos, içeceklerinizi uzun süre boyunca sıcak ya da soğuk tutabilmeniz için tasarlandı. Kullanışlı, sağlam ve ısı yalıtımı sağlayan, kapağa ve bardağa sahip, 1litre hacimli termos. 95°C'den itibaren: 6 saat sonunda 82°, 12 saat sonunda 73°, 24 saat sonunda 60",
+                    images: ["img/product-img/1L.jpg", "img/product-img/1L2.jpg"],
+                    reviews: [
+                        { user: "Ayşe T.", date: "01.12.2025", rating: 5, comment: "Sıcak tutması mükemmel.", verified: true }
+                    ]
+                },
+                "termos2": {
+                    name: "Çay Filtreli Termos 0.4L",
+                    category: "Termos & Matara",
+                    catCode: "termos",
+                    price: "1.000 TL",
+                    desc: "İçeceklerinizi birkaç saat boyunca sıcak veya soğuk tutmak mı istiyorsunuz? Bu çok sağlam ve kullanışlı termos sizin için tasarlandı. Çift katlı paslanmaz çelik sayesinde yüksek yalıtımlıdır, tek elle hızlı açılan kapağı ve çıkarılabilir çay filtresi vardır.Çift katlı bardak dahildir, taşıma sapı bulunur / 0, 4 litre.",
+                    images: ["img/product-img/cayTermos2.jpg", "img/product-img/cayTermos.jpg"],
+                    reviews: [
+                        { user: "Melih K.", date: "22.05.2024", rating: 5, comment: "Süzgeç özelliği mükemmel, sıcak tutması da oldukça iyi.", verified: true },
+                        { user: "Nisanur P.", date: "11.01.2024", rating: 4, comment: "Boyut olarak küçük ama kullanışlı.", verified: false }
+                    ]
+                },
+                "termos3": {
+                    name: "Alüminyum Matara 0.7L",
+                    category: "Termos & Matara",
+                    catCode: "termos",
+                    price: "450 TL",
+                    desc: "Bu sade ama verimli su şişesi, hem antrenman esnasında kullanmanız hem de her gün su içmeye motive olmanız için tasarlandı. İster antrenmanda ister evde ister işte; bu su şişesi, gün boyunca yeterli miktarda su içmenize yardımcı olmak için her zaman yanınızda.",
+                    images: ["img/product-img/almatara.jpg", "img/product-img/almatara2.jpg"],
+                    reviews: [
+                        { user: "Kerem O.", date: "29.08.2024", rating: 5, comment: "Hafif ve kokusuz, trekking için birebir.", verified: true }
+                    ]
+
+                },
+                "termos4": {
+                    name: "Matara 1.2L",
+                    category: "Termos & Matara",
+                    catCode: "termos",
+                    price: "380 TL",
+                    desc: "Doğa yürüyüşlerinizde içeceğinizi rahatça tüketmek mi istiyorsunuz? Bu büyük boy, hafif ve hızlı açılıp kapanan kapağa sahip matara sizin için tasarlandı. Bu ürün tek elle hızlı ve kolay bir şekilde açılır ve bir kilitleme sistemi bulunur Çok sağlam ve şeffaf Ecozen® plastik matara(1,2 L).",
+                    images: ["img/product-img/matara.jpg", "img/product-img/matara2.jpg", "img/product-img/matara3.jpg"],
+                    reviews: [
+                        { user: "Burcu S.", date: "17.02.2024", rating: 3, comment: "Hacmi güzel ama kapağı biraz gevşek gibi hissettirdi.", verified: false },
+                        { user: "Hüseyin V.", date: "05.09.2023", rating: 4, comment: "Fiyatına göre oldukça iyi, askı aparatı sağlam.", verified: true }
+                    ]
+
+                },
+
+                // UYKU TULUMLARI
+                "tulum1": {
+                    name: "Trekking Sentetik Uyku Tulumu",
+                    category: "Uyku Tulumları",
+                    catCode: "tulum",
+                    price: "3.900 TL",
+                    desc: "Mumya şekli ve saran kapüşona sahip bu trekking uyku tulumu, 0 °C ila -5 °C arasındaki sıcaklıklarda çadırda geçireceğiniz geceler için tasarlandı. Bu dolgulu uyku tulumu geliştirilmiştir.Daha hafif ve kompakt olduğundan yürüyüşçülerin beklentilerini daha iyi karşılar.Uzunluğun 3/4'ü boyunca bulunan fermuarla kolay açılma.",
+                    images: ["img/product-img/tulumHaki1.jpg", "img/product-img/tulumHaki2.jpg"],
+                    reviews: [
+                        { user: "Alper Z.", date: "15.06.2024", rating: 5, comment: "Yaz–kış birçok kampta kullandım, asla üşütmedi.", verified: true }
+                    ]
+                },
+                "tulum2": {
+                    name: "Kamp Uyku Tulumu",
+                    category: "Uyku Tulumları",
+                    catCode: "tulum",
+                    price: "1.500 TL",
+                    desc: "Bu Arpenaz uyku tulumu, kamp sırasında 10 °C'ye kadar sıcaklıklarda rahatça uyumak isteyen kullanıcılar için tasarlandı. Motivasyonumuzu öğrenmek ister misiniz? Size kolay açılabilen, boydan fermuara sahip bir uyku tulumu sunmak.Yorgan olarak kullanılabilir ve birleştirilir. 5 yıl garantili!",
+                    images: ["img/product-img/kampTulum1.jpg", "img/product-img/kampTulum2.jpg"],
+                    reviews: [
+                        { user: "Selma G.", date: "12.09.2024", rating: 4, comment: "Uzun kamp geceleri için yeterince sıcak tutuyor.", verified: true },
+                        { user: "Onur D.", date: "27.11.2023", rating: 4, comment: "Malzeme kaliteli fakat fermuar biraz takılıyor.", verified: false }
+                    ]
+
+                },
+                "tulum3": {
+                    name: "Seyahat Yastığı",
+                    category: "Uyku Tulumları",
+                    catCode: "tulum",
+                    price: "400 TL",
+                    desc: "Bu seyahat yastığı rahatlığınızı garanti etmek için tasarlandı. Bu yastık, toplu taşıma araçlarında seyahat ederken boynunuzun yükünü hafifletir.",
+                    images: ["img/product-img/seyahatYastigi.jpg", "img/product-img/seyahatYastigi2.jpg"],
+                    reviews: []
+                },
+                "tulum4": {
+                    name: "Kamp Yastığı",
+                    category: "Uyku Tulumları",
+                    catCode: "tulum",
+                    price: "400 TL",
+                    desc: "Comfort yastık, kamp ya da bivak yaparken size eşlik etmesi için tasarlandı. Motivasyonumuzu öğrenmek ister misiniz? Kamp ya da bivak yaptığınız gecelerde size eşlik edecek rahat bir yastık sunmak.Modüler yapısıyla sertliğini kendinize göre ayarlayabilirsiniz.",
+                    images: ["img/product-img/yastik1.jpg", "img/product-img/yastik2.jpg"],
+                    reviews: [
+                        { user: "Dila A.", date: "19.02.2024", rating: 5, comment: "Küçük, hafif ve çok pratik.", verified: true },
+                        { user: "Serhat E.", date: "03.10.2023", rating: 5, comment: "Şişmesi hızlı, boyutu ideal.", verified: false }
+                    ]
+                },
+
+                // AYDINLATMA
+                "aydinlatma1": {
+                    name: "Kamp Lambası",
+                    category: "Aydınlatma",
+                    catCode: "aydinlatma",
+                    price: "1.500 TL",
+                    desc: "Bu lamba 4 aydınlatma modu ile ihtiyaçlarınıza uyum sağlaması için tasarlandı: kırmızı mod, 15 lm, güçlü mod, sıcak renk, 200 lm. Asılı halde 360° ışık yayar. Uzun ömürlü ışık garantili! Tam güçte 7 saatten(200 lümen) ekonomik kırmızı modda 28 saate kadar.USB - C kablosuyla kolayca şarj edin.Açık havada gecelerin tadını çıkarın!",
+                    images: ["img/product-img/kampLambasi.jpg", "img/product-img/kampLambasi2.jpg", "img/product-img/kampLambasi3.jpg"],
+                    reviews: [
+                        { user: "Pelin F.", date: "08.03.2024", rating: 5, comment: "Kamp için vazgeçilmez, ışığı aşırı güçlü.", verified: true }
+                    ]
+
+                },
+                "aydinlatma2": {
+                    name: "El Feneri 900 Lümen",
+                    category: "Aydınlatma",
+                    catCode: "aydinlatma",
+                    price: "2.300 TL",
+                    desc: "Bu el feneri uzak mesafeleri sağlam ve su geçirmez bir cihazla güçlü bir şekilde aydınlatmak isteyen avcılar için tasarlandı. 900 lümen aydınlatması, alüminyum gövdesi ve USB şarj özelliği ile, her zaman, her tür arazide her tür doğa faaliyeti için ürün serisinin en güçlüsü",
+                    images: ["img/product-img/elFeneri1.jpg", "img/product-img/elFeneri2.jpg", "img/product-img/elFeneri3.jpg"],
+                    reviews: [
+                        { user: "Yusuf A.", date: "20.12.2023", rating: 4, comment: "Menzili güzel, malzeme kalitesi beklediğimden iyi.", verified: true },
+                        { user: "Büşra C.", date: "18.07.2023", rating: 5, comment: "Acil durumlarda çok iş gördü, harika!", verified: true }
+                    ]
+
+                },
+                "aydinlatma3": {
+                    name: "El Feneri 150 Lümen",
+                    category: "Aydınlatma",
+                    catCode: "aydinlatma",
+                    price: "750 TL",
+                    desc: "Bu şarj edilebilir el feneri, bivak alanınızı veya yolunuzu aydınlatabilmeniz için tasarlandı. Campanula el feneri sizi asla karanlıkta bırakmayacak.USB ile şarj edilebilir, ayrıca elle şarj etmek için dinamo koluna sahiptir.",
+                    images: ["img/product-img/elFeneriMavi1.jpg", "img/product-img/elFeneriMavi2.jpg", "img/product-img/elFeneriMavi3.jpg", "img/product-img/elFeneriMavi4.jpg"],
+                    reviews: []
+                },
+                "aydinlatma4": {
+                    name: "Kafa Feneri 80 Lümen",
+                    category: "Aydınlatma",
+                    catCode: "aydinlatma",
+                    price: "280 TL",
+                    desc: "Bu kafa lambası az teknik zeminlerde yürürken veya bivak yaparken kullanmanız için tasarlandı. Kafa lambası, çok işlevli, kullanımı kolay ve rahattır.Esnek yüzeyi darbelere ve su sıçramalarına karşı korunaklıdır. Campanula lambaları her koşula uyum sağlar.",
+                    images: ["img/product-img/kafaFeneri1.jpg", "img/product-img/kafaFeneri2.jpg", "img/product-img/kafaFeneri3.jpg"],
+                    reviews: []
+                },
+
+                // OUTDOOR GIYIM
+                "outdoor1": {
+                    name: "Erkek Kışlık Mont",
+                    category: "Giyim",
+                    catCode: "outdoor",
+                    price: "2.400 TL",
+                    desc: "Soğuk havalarda sabit durarak yapılan doğa gözlemi ve avlar için tasarlandı. Sıcak tutan, rahat, dayanıklı ve kış aylarında dış mekanda yapılan aktivitelere uygun mont.",
+                    images: ["img/product-img/erkekMont1.jpg", "img/product-img/erkekMont2.jpg", "img/product-img/erkekMont3.jpg", "img/product-img/erkekMont4.jpg"],
+                    reviews: [
+                        { user: "Eren H.", date: "25.11.2024", rating: 5, comment: "Kış dağ yürüyüşünde test ettim, efsane sıcak tutuyor.", verified: true }
+                    ]
+
+                },
+                "outdoor2": {
+                    name: "Kadın Yağmurluk",
+                    category: "Giyim",
+                    catCode: "outdoor",
+                    price: "4.700 TL",
+                    desc: "Bu yağmurluk, dışarıda, doğada ve yağmurlu havalarda yaptığınız tüm aktiviteler için tasarlandı. Dayanıklı ve su geçirmez olan bu yağmurluk, ormanda ve açık alanda yaptığınız avcılık aktivitelerinde yabani bitkilerle temas etmenizi sağlar. Sabit durarak avlanma için gürültülü olabilir.",
+                    images: ["img/product-img/kadinMont1.jpg", "img/product-img/kadinMont2.jpg", "img/product-img/kadinMont3.jpg", "img/product-img/kadinMont4.jpg", "img/product-img/kadinMont5.jpg"],
+                    reviews: []
+                },
+                "outdoor3": {
+                    name: "Gömlek Tipi Polar",
+                    category: "Giyim",
+                    catCode: "outdoor",
+                    price: "2.800 TL",
+                    desc: "Sıcak tutan ve dayanıklı pazen mont, tüm outdoor aktivitelerinizde size eşlik etmesi için tasarlandı. Onun hikayesini yazmak size kalmış. Dışarıda gününüzü geçirmek için sıcak tutan ve rahatlatıcı gömlek!",
+                    images: ["img/product-img/unisex.jpg", "img/product-img/unisex2.jpg", "img/product-img/unisex3.jpg"],
+                    reviews: [
+                        { user: "Sude K.", date: "13.02.2024", rating: 4, comment: "Yağmuru hiç geçirmiyor ama biraz ağır.", verified: false },
+                        { user: "Feriha L.", date: "30.10.2023", rating: 5, comment: "Ömürlük bir yağmurluk, kesinlikle tavsiye ederim.", verified: true }
+                    ]
+
+                },
+
+                // CANTA
+                "canta1": {
+                    name: "Trekking Sırt Çantası",
+                    category: "Sırt Çantaları",
+                    catCode: "canta",
+                    price: "4.400 TL",
+                    desc: "Birkaç günlüğüne trekking mi yapıyorsunuz? 70L hacimli bu çanta, trekking yaparken gereken her şeyi yanınızda taşımanız için tasarlandı. İyi bir hacme sahip bu sırt çantası, sağlam ve teknik olmanın yanı sıra kullanım kolaylığını ve yürürken sunduğu rahatlığı bir araya getirir.",
+                    images: ["img/product-img/cantaTrekking1.jpg", "img/product-img/cantaTrekking2.jpg", "img/product-img/cantaTrekking3.jpg", "img/product-img/cantaTrekking4.jpg"],
+                    reviews: []
+                },
+                "canta2": {
+                    name: "Sırt Çantası",
+                    category: "Sırt Çantaları",
+                    catCode: "canta",
+                    price: "3.500 TL",
+                    desc: "Bu çanta durak avı için geliştirildi.Sessiz kumaşı sayesinde durak avında size ideal şekilde eşlik eder. Hem durak hem de takip avında eşyalarınız taşınabilir olmalıdır.",
+                    images: ["img/product-img/cantaHaki.jpg", "img/product-img/cantaHaki2.jpg", "img/product-img/cantaHaki3.jpg"],
+                    reviews: [
+                        { user: "Ezgi H.", date: "21.09.2024", rating: 4, comment: "Kamp için kullanımı çok rahat, cepleri yeterli.", verified: false },
+                        { user: "Adnan İ.", date: "02.08.2023", rating: 3, comment: "Kalitesi güzel ama sırt kısmı biraz sert.", verified: true }
+                    ]
+
+                },
+
+                // MUTFAK
+                "mutfak1": {
+                    name: "Outdoor Yemek Seti",
+                    category: "Kamp Mutfağı",
+                    catCode: "mutfak",
+                    price: "3.000 TL",
+                    desc: "4 kişilik 24 parçalı eksiksiz yemek seti: paslanmaz çelik ve yapışmaz tencere ve tavası ile açık havada evdeki gibi yemek pişirmeniz için tasarlandı! Kamp ateşinden ocağa kadar her türlü ateşin üzerinde yemek pişirin ve gerçek çatal bıçaklarla tabaklardaki yemeklerin tadını çıkarın. Doğanın kalbinde bile ev rahatlığı!",
+                    images: ["img/product-img/kap.jpg", "img/product-img/kap2.jpg", "img/product-img/kap3.jpg"],
+                    reviews: [
+                        { user: "Göktuğ Y.", date: "11.03.2024", rating: 5, comment: "Set içindeki parçalar kaliteli, kamp için yeterli.", verified: true }
+                    ]
+
+                },
+                "mutfak2": {
+                    name: "Katlanır Ateş Kutusu",
+                    category: "Kamp Mutfağı",
+                    catCode: "mutfak",
+                    price: "1.200 TL",
+                    desc: "Katlanabilir ve paslanmaz çelik odun ocağı, ateşte kolayca yemek pişirmeniz için tasarlandı. 1-2 kişi için idealdir, yanmaz mat ve çanta ile birlikte satılır. Ateş üzerinde yemeğin tadını çıkarmak için bu katlanır odun ocağını her maceranızda yanınızda taşıyın ve daha fazla koruma sağlamak için yanmaz matı ile sadece alevin yaydığı sıcaklığın keyfine varın",
+                    images: ["img/product-img/ocak1.jpg", "img/product-img/ocak2.jpg", "img/product-img/ocak3.jpg"],
+                    reviews: [
+                        { user: "İlayda S.", date: "07.10.2024", rating: 5, comment: "Katlanır yapısı çok pratik, rüzgarda bile stabil duruyor.", verified: true },
+                        { user: "Burak D.", date: "12.05.2023", rating: 5, comment: "İş görür bir ürün, taşıması kolay.", verified: false }
+                    ]
+
+                },
+
+                // AKSESUAR
+                "aksesuar1": {
+                    name: "Çok Amaçlı Çakı",
+                    category: "Aksesuarlar",
+                    catCode: "aksesuar",
+                    price: "1.500 TL",
+                    desc: "12 fonksiyonlu paslanmaz çelik İsviçre çakısı.",
+                    images: ["img/product-img/caki1.jpg", "img/product-img/caki2.jpg", "img/product-img/caki3.jpg"],
+                    reviews: [
+                        { user: "Rıza T.", date: "03.12.2023", rating: 4, comment: "Malzeme kalitesi iyi fakat açma mekanizması biraz sert. Yine de tavsiye ederim.", verified: true }
+                    ]
+                },
+                "aksesuar2": {
+                    name: "Katlanır Kamp Küreği",
+                    category: "Aksesuarlar",
+                    catCode: "aksesuar",
+                    price: "1.150 TL",
+                    desc: "Bu kamp küreği, şiddetli yağmurda çadırınızın etrafında oluk oluşturmak gibi çeşitli işleri yapabilmeniz için tasarlandı. Kürek mi yoksa kazma mı? Artık seçmenize gerek yok, 2'si 1 arada!",
+                    images: ["img/product-img/kurek1.jpg", "img/product-img/kurek2.jpg", "img/product-img/kurek3.jpg"],
+                    reviews: [
+                        { user: "Serkan M.", date: "21.11.2023", rating: 5, comment: "Beklediğimden daha sağlam çıktı.Toprak kazarken hiç zorlanmadım.", verified: true }
+                    ]
+                },
+                "aksesuar3": {
+                    name: "Şişme Mat Onarım Seti",
+                    category: "Aksesuarlar",
+                    catCode: "aksesuar",
+                    price: "200 TL",
+                    desc: "Bu yapışkanlı yamalar, şişirilebilir matınızda oluşan patlamaları, küçük yırtılmaları ve hava sızıntılarını tamir edebilmeniz için tasarlandı. Bu yapışkanlı yamalar tüm şişirilebilir Air kamp matları ile uyumludur.",
+                    images: ["img/product-img/bant.jpg", "img/product-img/bant2.jpg", "img/product-img/bant3.jpg"],
+                    reviews: [
+                        { user: "Serkan M.", date: "21.10.2023", rating: 3, comment: "Küçük bir paket ama iş görüyor. Acil durumlar için çantada bulunmalı.", verified: true }
+                    ]
+                }
+            };
+        
+        /* ==============================================
+           SAYFA İŞLEMLERİ (Ready Function)
+           ============================================== */
+        $(document).ready(function () {
+
+            /* --- Yıldız Oluşturma --- */
+            function generateStars(rating) {
+                let starsHTML = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= rating) {
+                        starsHTML += '<i class="fa fa-star" aria-hidden="true" style="color: #fbb710;"></i>';
+                    } else {
+                        starsHTML += '<i class="fa fa-star" aria-hidden="true" style="color: #e3e3e3;"></i>';
+                    }
+                }
+                return starsHTML;
+            }
+
+            // URL'den Ürün Kodunu Alma
+            const urlParams = new URLSearchParams(window.location.search);
+            const productCode = urlParams.get('urunkodu');
+            
+            $("#breadcrumb-category").attr("href", "shop.html");
+
+            // Sayfayı Doldurma
+            if (productCode && products[productCode]) {
+                const p = products[productCode];
+
+                // Temel Bilgiler
+                $("#product-name").text(p.name);
+                $("#breadcrumb-name").text(p.name);
+                $("#breadcrumb-category").text(p.category);
+                $("#product-price").text(p.price);
+                $("#product-desc").text(p.desc);
+                
+
+                // Slider
+                let indicatorsHTML = "";
+                let innerHTML = "";
+                if (p.images && p.images.length > 0) {
+                    p.images.forEach((imgSrc, index) => {
+                        indicatorsHTML += `<li class="${index === 0 ? 'active' : ''}" data-target="#product_details_slider" data-slide-to="${index}" style="background-image: url(${imgSrc});"></li>`;
+                        innerHTML += `<div class="carousel-item ${index === 0 ? 'active' : ''}"><a class="gallery_img" href="${imgSrc}"><img class="d-block w-100" src="${imgSrc}" alt="${p.name}"></a></div>`;
+                    });
+                    $("#slider-indicators").html(indicatorsHTML);
+                    $("#slider-inner").html(innerHTML);
+                }
+
+                // Yorumlar
+                if (p.reviews && p.reviews.length > 0) {
+                    $("#reviews-container").show();
+                    let totalScore = 0;
+                    p.reviews.forEach(r => totalScore += r.rating);
+                    let average = (totalScore / p.reviews.length).toFixed(1);
+
+                    $("#average-score").text(average + " / 5");
+                    $("#average-stars").html(generateStars(Math.round(average)));
+                    $("#product-top-stars").html(generateStars(Math.round(average)));
+                    $("#total-review-count").text(p.reviews.length);
+
+                    let reviewsHTML = "";
+                    p.reviews.forEach(r => {
+                        reviewsHTML += `
+                            <div class="single-review">
+                                <div class="review-header">
+                                    <div><span class="reviewer-name">${r.user}</span>${r.verified ? '<span class="verified-badge"><i class="fa fa-check-circle"></i> Doğrulanmış Alıcı</span>' : ''}</div>
+                                    <span class="review-date">${r.date}</span>
+                                </div>
+                                <div class="star-rating">${generateStars(r.rating)}</div>
+                                <p class="review-comment">${r.comment}</p>
+                            </div>`;
+                    });
+                    $("#review-list-area").html(reviewsHTML);
+                } else {
+                    $("#reviews-container").show();
+                    $("#review-list-area").html('<p class="text-muted p-3">Bu ürün için henüz değerlendirme yapılmamış. İlk değerlendirmeyi siz yapın!</p>');
+                    $("#average-score").text("-");
+                    $("#average-stars").html("");
+                    $("#total-review-count").text("0");
+                }
+
+            } else {
+                $(".single_product_desc").html("<h3>Ürün bulunamadı veya bir seçim yapmadınız.</h3>");
+            }
+
+            /* --- Buton Mantığı --- */
+            var $qty = $('#qty');
+
+            $('.qty-plus').off('click').on('click', function () {
+                var currentVal = parseInt($qty.val());
+                if (!isNaN(currentVal) && currentVal < 10) {
+                    $qty.val(currentVal + 1);
+                }
+            });
+
+            $('.qty-minus').off('click').on('click', function () {
+                var currentVal = parseInt($qty.val());
+                if (!isNaN(currentVal) && currentVal > 1) {
+                    $qty.val(currentVal - 1);
+                }
+            });
+
+            $qty.on('input', function() {
+                var val = parseInt($(this).val());
+                if (val > 10) $(this).val(10);
+                if (val < 1 || isNaN(val)) $(this).val(1);
+            });
+
+            /* --- SEPETE EKLEME MANTIĞI --- */
+            $(".cart").on("submit", function(e) {
+                e.preventDefault(); 
+
+                if (typeof addToCart !== "function") {
+                    alert("Hata: sepet.js dosyası yüklenemedi!");
+                    return;
+                }
+
+                if (productCode && products[productCode]) {
+                    const p = products[productCode];
+                    const qty = parseInt($("#qty").val());
+                    
+                    let cleanPrice = p.price.replace(/\./g, '').replace(' TL', '').trim();
+
+                    const itemToAdd = {
+                        id: productCode,
+                        name: p.name,
+                        price: parseInt(cleanPrice), 
+                        img: p.images[0],
+                        qty: qty
+                    };
+
+                    addToCart(itemToAdd); 
+                } else {
+                    alert("Ürün bilgisi alınamadı!");
+                }
+            });      
+    });
+    
+</script>
+
+</body>
+
+</html>

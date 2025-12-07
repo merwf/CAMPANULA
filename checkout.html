@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Campanula Ödeme Sayfası">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Campanula - Ödeme</title>
+
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, button, .nav-link, label, select, textarea {
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        /* --- AMADO DROPDOWN MENÜ DÜZELTMELERİ --- */
+        .amado-nav li .dropdown-menu {
+            border: none !important;
+            border-radius: 0 !important;
+            background-color: #f5f7fa !important;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+            padding: 10px 0 !important;
+            min-width: 240px;
+            margin-top: 0 !important;
+            top: 100%;
+        }
+
+        .amado-nav li .dropdown-menu .dropdown-item {
+            font-size: 13px !important;
+            text-transform: uppercase;
+            color: #333 !important;
+            padding: 8px 25px !important;
+            font-family: 'Roboto', sans-serif !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .amado-nav li .dropdown-menu .dropdown-item::after,
+        .amado-nav li .dropdown-menu .dropdown-item::before {
+            display: none !important;
+        }
+
+        .amado-nav li .dropdown-menu .dropdown-item:hover {
+            background-color: #e9ecef !important;
+            color: #000000 !important;
+            padding-left: 35px !important;
+            text-decoration: none !important;
+        }
+
+        .dropdown-divider {
+            border-top: 1px solid #ddd !important;
+            margin: 5px 0 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close">
+            <i class="fa fa-close" aria-hidden="true"></i>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Anahtar kelimenizi yazın...">
+                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <div class="mobile-nav">
+            <div class="amado-navbar-brand">
+                <a href="index.html"><img src="img/core-img/logo.png" alt=""></a>
+            </div>
+            <div class="amado-navbar-toggler">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <header class="header-area clearfix">
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <a href="index.html"><img src="img/core-img/logo.png" alt="KampDoğa Logo"></a>
+            </div>
+
+            <nav class="amado-nav">
+                <ul>
+                    <li><a href="index.html">Anasayfa</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ürünlerimiz
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="shop.html?group=ekipman">Kamp Ekipmanı</a>
+                            <a class="dropdown-item" href="shop.html?group=mutfak">Kamp Mutfak Gereçleri</a>
+                            <a class="dropdown-item" href="shop.html?group=giyim">Giyim & Outdoor</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="shop.html?group=all">Tümünü Gör</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUnits" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Birimlerimiz
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUnits">
+                        <a class="dropdown-item" href="teknik-servis.html">Teknik Servis</a>
+                        <a class="dropdown-item" href="musteri-hizmetleri.html">Müşteri Hizmetleri</a>
+                        <a class="dropdown-item" href="lojistik.html">Lojistik & Depo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="admin-login.html" style="color: #fbb710; font-weight: bold;">Yönetici Paneli</a>
+                    </div>
+                </li>
+                    <li><a href="duyurular.html">Duyurular</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="vizyon.html">Misyon & Vizyon</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+            <br><br>
+            <div class="cart-fav-search mb-100">
+                <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Sepetim <span>(0)</span></a>
+                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favoriler</a>
+                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Ara</a>
+            </div>
+            <div class="social-info d-flex justify-content-between">
+                <a href="https://github.com/merwf" target="_blank">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/merve-gazioğlu-047648235" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/elf_merve8/?next=%2F" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+        </header>
+
+        <div class="cart-table-area section-padding-100">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <div class="checkout_details_area mt-50 clearfix">
+
+                            <div class="cart-title">
+                                <h2>Ödeme Bilgileri</h2>
+                            </div>
+
+                            <form action="#" method="post" id="checkout-form">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" id="first_name" value="" placeholder="Adınız" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" id="last_name" value="" placeholder="Soyadınız" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" id="company" placeholder="Şirket Adı (Opsiyonel)" value="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="email" class="form-control" id="email" placeholder="E-posta Adresi" value="" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <select class="w-100" id="country">
+                                            <option value="tr">Türkiye</option>
+                                            <option value="usa">Amerika Birleşik Devletleri</option>
+                                            <option value="uk">Birleşik Krallık</option>
+                                            <option value="ger">Almanya</option>
+                                            <option value="fra">Fransa</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control mb-3" id="street_address" placeholder="Adres" value="" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input type="text" class="form-control" id="city" placeholder="Şehir" value="" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="text" class="form-control" id="zipCode" placeholder="Posta Kodu" value="">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <input type="number" class="form-control" id="phone_number" min="0" placeholder="Telefon No" value="" required>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="Sipariş Notunuz (Opsiyonel)"></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="cart-summary">
+                            <h5>Sepet Tutarı</h5>
+                            <ul class="summary-table">
+                                <li><span>Ara Toplam:</span> <span id="checkout-subtotal">0 TL</span></li>
+                                <li><span>Kargo:</span> <span id="checkout-shipping">Ücretsiz</span></li>
+                                <li><span>Genel Toplam:</span> <span id="checkout-total">0 TL</span></li>
+                            </ul>
+
+                            <div class="payment-method">
+                                <div class="custom-control custom-radio mr-sm-2">
+                                    <input type="radio" class="custom-control-input" id="cod" name="paymentType" value="cod" checked>
+                                    <label class="custom-control-label" for="cod">Kapıda Ödeme</label>
+                                </div>
+                                <div class="custom-control custom-radio mr-sm-2">
+                                    <input type="radio" class="custom-control-input" id="card" name="paymentType" value="card">
+                                    <label class="custom-control-label" for="card">
+                                        Kredi Kartı <img class="ml-15" src="img/core-img/paypal.png" alt="">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="cart-btn mt-100">
+                                <a href="#" id="finish-order-btn" class="btn amado-btn w-100">Siparişi Tamamla</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer_area clearfix" style="background-color: #222; padding-top: 70px; padding-bottom: 20px; color: #b5b5b5;">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <div class="footer-logo mb-4">
+                            <a href="index.html"><img src="img/core-img/logo2.png" alt="Campanula" style="max-height: 60px;"></a>
+                        </div>
+                        <p style="font-size: 14px; line-height: 1.6;">Doğayla buluşmanızda yanınızdayız. En kaliteli kamp ekipmanları burada.</p>
+                        
+                        <div class="footer-social-info mt-4">
+                            <a href="https://github.com/merwf" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="GitHub"><i class="fa fa-github"></i></a>
+                            
+                            <a href="https://www.linkedin.com/in/merve-gazioğlu-047648235" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                            
+                            <a href="https://www.instagram.com/elf_merve8/?next=%2F" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="Instagram"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Kurumsal</h5>
+                        <ul style="padding: 0; list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="duyurular.html" style="color: #ddd; transition: 0.3s;">Duyurular</a></li>
+                            <li style="margin-bottom: 10px;"><a href="hakkimizda.html" style="color: #ddd; transition: 0.3s;">Hakkımızda</a></li>
+                            <li style="margin-bottom: 10px;"><a href="vizyon.html" style="color: #ddd; transition: 0.3s;">Misyon & Vizyon</a></li>
+                            <li style="margin-bottom: 10px;"><a href="iletisim.html" style="color: #ddd; transition: 0.3s;">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Yardım</h5>
+                        <ul style="padding: 0; list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Sipariş Takibi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">İade ve Değişim</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Kargo ve Teslimat</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Gizlilik Politikası</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Bize Ulaşın</h5>
+                        
+                        <p style="margin-bottom: 15px;">
+                            <i class="fa fa-map-marker" style="color: #fbb710; display: block; font-size: 24px; margin-bottom: 10px;"></i>
+                            Yahya Kaptan Mah. Şehit Ergün Köncü Sok. No: 12, İzmit/Kocaeli
+                        </p>
+                        
+                        <p style="margin-bottom: 15px;">
+                            <span style="display: block;">info@campanula.com</span>
+                            <span style="display: block;">+90 262 123 45 67</span>
+                        </p>
+
+                        <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 5px; margin-top: 15px;">
+                            <i class="fa fa-clock-o" style="color: #fbb710; margin-right: 5px;"></i>
+                            <span style="font-size: 13px;">Pzt - Cmt: 09:00 - 19:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center;">
+                        <p style="color: #fff; font-size: 14px; margin-bottom: 5px; font-weight: 500;">
+                            Tasarım & Kodlama: Merve Gazioğlu - 231307100
+                        </p>
+                        <p style="font-size: 12px; color: #666;">
+                            Telif Hakkı &copy; <script>document.write(new Date().getFullYear());</script> Campanula Outdoor. Tüm hakları saklıdır.
+                        </p>
+                        <div class="mt-2">
+                            <img src="img/core-img/paypal.png" alt="Visa" style="height: 20px; opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/active.js"></script>
+    
+    <script src="js/sepet.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // 1. Sepet verilerini LocalStorage'dan çek
+            let cart = JSON.parse(localStorage.getItem('shoppingCart')) || [];
+            
+            // 2. Hesaplamaları yap
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.qty;
+            });
+
+            let shippingCost = 0;
+            let shippingText = "Ücretsiz";
+
+            if (subtotal > 0 && subtotal < 1000) {
+                shippingCost = 50;
+                shippingText = "50 TL";
+            }
+
+            let grandTotal = subtotal + shippingCost;
+
+            // 3. Değerleri kutucuğa yaz
+            $('#checkout-subtotal').text(subtotal.toLocaleString('tr-TR') + ' TL');
+            $('#checkout-shipping').text(shippingText);
+            $('#checkout-total').text(grandTotal.toLocaleString('tr-TR') + ' TL');
+
+            // 4. "Siparişi Tamamla" Butonu Mantığı
+            $('#finish-order-btn').on('click', function(e) {
+                e.preventDefault();
+
+                // A) Sepet Boş mu?
+                if (cart.length === 0) {
+                    alert("Sepetiniz boş! Önce ürün eklemelisiniz.");
+                    window.location.href = "shop.html";
+                    return;
+                }
+
+                // B) Form Dolu mu? (Zorunlu alanlar)
+                let name = $('#first_name').val().trim();
+                let surname = $('#last_name').val().trim();
+                let address = $('#street_address').val().trim();
+                let phone = $('#phone_number').val().trim();
+                let city = $('#city').val().trim(); // Şehri de ekledim
+
+                if (!name || !surname || !address || !phone || !city) {
+                    alert("Lütfen tüm zorunlu alanları (Ad, Soyad, Şehir, Adres, Telefon) doldurunuz.");
+                    return; 
+                }
+
+                // C) Hangi Ödeme Yöntemi Seçili?
+                let paymentMethod = $('input[name="paymentType"]:checked').val();
+
+                if (paymentMethod === 'card') {
+                    // Kredi Kartı
+                    $('#creditCardModal').modal('show');
+                } else {
+                    // Kapıda Ödeme
+                    completeOrder(name, surname, grandTotal, "Kapıda Ödeme");
+                }
+            });
+
+            // 5. Modal İçindeki "Ödemeyi Onayla" Butonu
+            $('#confirm-payment-btn').on('click', function() {
+                
+                // Kart Bilgileri Kontrolü
+                let cName = $('#card_name').val().trim();
+                let cNum = $('#card_number').val().trim();
+                let cExp = $('#card_expiry').val().trim();
+                let cCvv = $('#card_cvv').val().trim();
+
+                if (!cName || !cNum || !cExp || !cCvv) {
+                    alert("Lütfen kredi kartı bilgilerini eksiksiz giriniz!");
+                    return; // Modal kapanmaz
+                }
+
+                // Modalı kapat
+                $('#creditCardModal').modal('hide');
+
+                // Bilgileri alıp siparişi bitir
+                let name = $('#first_name').val();
+                let surname = $('#last_name').val();
+                
+                // Hafif bir gecikme verelim, modal kapansın
+                setTimeout(function() {
+                    completeOrder(name, surname, grandTotal, "Kredi Kartı");
+                }, 500);
+            });
+
+            // ORTAK SİPARİŞ TAMAMLAMA FONKSİYONU
+            function completeOrder(name, surname, total, method) {
+                
+                // 1. Sipariş Objesi Oluştur
+                var newOrder = {
+                    id: "SIP-" + Math.floor(Math.random() * 100000), // Rastgele sipariş no
+                    customer: name + " " + surname,
+                    amount: total.toLocaleString('tr-TR') + " TL",
+                    date: new Date().toLocaleDateString('tr-TR'),
+                    status: "Bekliyor"
+                };
+
+                // 2. Mevcut siparişleri çek
+                var orders = JSON.parse(localStorage.getItem('adminOrders')) || [];
+                
+                // 3. Yeni siparişi listeye ekle
+                orders.push(newOrder);
+                
+                // 4. Listeyi tekrar kaydet
+                localStorage.setItem('adminOrders', JSON.stringify(orders));
+
+                // 5. Başarı Mesajı ve Yönlendirme
+                alert("Teşekkürler Sayın " + name + " " + surname + "!\n" + 
+                    "Ödeme Yöntemi: " + method + "\n" +
+                    "Siparişiniz başarıyla alınmıştır.\n" + 
+                    "Toplam Tutar: " + newOrder.amount);
+
+                // Sepeti temizle
+                localStorage.removeItem('shoppingCart');
+                window.location.href = "index.html";
+            }
+        });
+    </script>
+
+    <div class="modal fade" id="creditCardModal" tabindex="-1" role="dialog" aria-labelledby="ccModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="ccModalLabel">Kredi Kartı Bilgileri</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="cc-form">
+                <div class="form-group">
+                    <label>Kart Üzerindeki İsim</label>
+                    <input type="text" class="form-control" id="card_name" placeholder="Ad Soyad" required>
+                </div>
+                <div class="form-group">
+                    <label>Kart Numarası</label>
+                    <input type="text" class="form-control" id="card_number" placeholder="0000 0000 0000 0000" maxlength="19" required>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>Son Kullanma (Ay/Yıl)</label>
+                            <input type="text" class="form-control" id="card_expiry" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label>CVV</label>
+                            <input type="text" class="form-control" id="card_cvv" placeholder="123" maxlength="3" required>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">İptal</button>
+            <button type="button" class="btn amado-btn" id="confirm-payment-btn">Ödemeyi Onayla</button>
+        </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Campanula - İletişim">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Campanula - İletişim</title>
+
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        /* --- GENEL AYARLAR --- */
+        body, h1, h2, h3, h4, h5, h6, p, a, span, li, input, button, .nav-link, textarea {
+            font-family: 'Roboto', sans-serif !important;
+        }
+
+        /* --- DROPDOWN DÜZELTMELERİ --- */
+        .amado-nav li .dropdown-menu {
+            border: none !important;
+            border-radius: 0 !important;
+            background-color: #f5f7fa !important;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+            padding: 10px 0 !important;
+            min-width: 240px;
+            margin-top: 0 !important;
+            top: 100%;
+        }
+
+        .amado-nav li .dropdown-menu .dropdown-item {
+            font-size: 13px !important;
+            text-transform: uppercase;
+            color: #333 !important;
+            padding: 8px 25px !important;
+            font-weight: 500 !important;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .amado-nav li .dropdown-menu .dropdown-item::after,
+        .amado-nav li .dropdown-menu .dropdown-item::before { display: none !important; }
+
+        .amado-nav li .dropdown-menu .dropdown-item:hover {
+            background-color: #e9ecef !important;
+            color: #000 !important;
+            padding-left: 35px !important;
+        }
+
+        .dropdown-divider { border-top: 1px solid #ddd !important; margin: 5px 0 !important; }
+
+        /* --- İLETİŞİM SAYFASI ÖZEL STİLLERİ --- */
+        .page-content-wrapper {
+            width: 100%;
+            padding: 50px 5%;
+        }
+
+        @media (min-width: 992px) {
+            .page-content-wrapper {
+                flex: 0 0 calc(100% - 320px);
+                max-width: calc(100% - 320px);
+            }
+        }
+
+        /* Hero Alanı */
+        .contact-hero {
+            position: relative; height: 250px; border-radius: 15px;
+            /* Uygun bir arka plan görseli */
+            background: url("img/core-img/iletisim.png") center/cover no-repeat; 
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden; margin-bottom: 50px;
+        }
+        .contact-hero::before {
+            content: ""; position: absolute; top:0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.5);
+        }
+        .contact-hero h2 { color: #fff; font-size: 42px; font-weight: 700; text-transform: uppercase; z-index: 1; letter-spacing: 2px; }
+
+        /* Kart Yapısı */
+        .contact-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .contact-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .contact-title::after {
+            content: ""; position: absolute; left: 0; bottom: 0;
+            width: 40px; height: 3px; background-color: #fbb710;
+        }
+
+        /* İletişim Bilgileri Listesi */
+        .contact-info-list { list-style: none; padding: 0; }
+        
+        .contact-info-list li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center; 
+            font-size: 15px;
+            color: #555;
+        }
+        
+        .contact-info-list i {
+            color: #fbb710;
+            font-size: 20px;
+            margin-right: 15px;
+            margin-top: 0; 
+            width: 25px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Form Stilleri */
+        .form-control {
+            height: 50px;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            background-color: #f9f9f9;
+            margin-bottom: 20px;
+            padding: 15px;
+            font-size: 14px;
+        }
+        .form-control:focus {
+            border-color: #fbb710;
+            box-shadow: none;
+            background-color: #fff;
+        }
+        textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+
+        /* Harita Alanı */
+        .map-area {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+            border: 5px solid #fff;
+        }
+        /* --- FOOTER'I EN ALTA SABİTLEME (Sticky Footer) --- */
+        html, body {
+            height: 100%; 
+            margin: 0;
+        }
+
+        body {
+            display: flex;       
+            flex-direction: column; 
+        }
+
+        .main-content-wrapper {
+            flex: 1; 
+        }
+
+        .footer_area {
+            flex-shrink: 0; 
+            width: 100%;    
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="search-wrapper section-padding-100">
+        <div class="search-close"><i class="fa fa-close" aria-hidden="true"></i></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="search-content">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Aradığınızı yazın...">
+                            <button type="submit"><img src="img/core-img/search.png" alt=""></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="main-content-wrapper d-flex clearfix">
+
+        <div class="mobile-nav">
+            <div class="amado-navbar-brand"><a href="index.html"><img src="img/core-img/logo.png" alt=""></a></div>
+            <div class="amado-navbar-toggler"><span></span><span></span><span></span></div>
+        </div>
+
+        <header class="header-area clearfix">
+            <div class="nav-close">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+            <div class="logo">
+                <a href="index.html"><img src="img/core-img/logo.png" alt="KampDoğa Logo"></a>
+            </div>
+
+            <nav class="amado-nav">
+                <ul>
+                    <li><a href="index.html">Anasayfa</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Ürünlerimiz
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="shop.html?group=ekipman">Kamp Ekipmanı</a>
+                            <a class="dropdown-item" href="shop.html?group=mutfak">Kamp Mutfak Gereçleri</a>
+                            <a class="dropdown-item" href="shop.html?group=giyim">Giyim & Outdoor</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="shop.html?group=all">Tümünü Gör</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUnits" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Birimlerimiz
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownUnits">
+                        <a class="dropdown-item" href="teknik-servis.html">Teknik Servis</a>
+                        <a class="dropdown-item" href="musteri-hizmetleri.html">Müşteri Hizmetleri</a>
+                        <a class="dropdown-item" href="lojistik.html">Lojistik & Depo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="admin-login.html" style="color: #fbb710; font-weight: bold;">Yönetici Paneli</a>
+                    </div>
+                </li>
+                    <li><a href="duyurular.html">Duyurular</a></li>
+                    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                    <li><a href="vizyon.html">Misyon & Vizyon</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </nav>
+            <br><br>
+            <div class="cart-fav-search mb-100">
+                <a href="cart.html" class="cart-nav"><img src="img/core-img/cart.png" alt=""> Sepetim <span>(0)</span></a>
+                <a href="#" class="fav-nav"><img src="img/core-img/favorites.png" alt=""> Favoriler</a>
+                <a href="#" class="search-nav"><img src="img/core-img/search.png" alt=""> Ara</a>
+            </div>
+            <div class="social-info d-flex justify-content-between">
+                <a href="https://github.com/merwf" target="_blank">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/merve-gazioğlu-047648235" target="_blank">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://www.instagram.com/elf_merve8/?next=%2F" target="_blank">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+            </div>
+        </header>
+
+        <div class="page-content-wrapper clearfix">
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-hero">
+                        <h2>BİZE ULAŞIN</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-lg-5">
+                    <div class="contact-card">
+                        <h4 class="contact-title">İletişim Bilgileri</h4>
+                        <p style="margin-bottom: 30px; font-size: 14px; color: #666;">
+                            Sorularınız, önerileriniz veya iş birlikleri için bizimle iletişime geçebilirsiniz. Ekibimiz en kısa sürede dönüş sağlayacaktır.
+                        </p>
+                        <ul class="contact-info-list">
+                            <li>
+                                <i class="fa fa-map-marker"></i>
+                                <span>Yahya Kaptan Mah. Şehit Ergün Köncü Sok. No: 12,<br>İzmit / Kocaeli, Türkiye</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i>
+                                <span>+90 262 123 45 67<br>+90 532 000 00 00</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope"></i>
+                                <span>info@campanula.com<br>destek@campanula.com</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-clock-o"></i>
+                                <span>Pzt - Cmt: 09:00 - 19:00<br>Pazar: Kapalı</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-7">
+                    <div class="contact-card">
+                        <h4 class="contact-title">Şikayet ve Öneri Formu</h4>
+                        <form action="#" method="post" id="contactForm">
+                            <div class="row">
+                                <div class="col-12 col-md-6">
+                                    <input type="text" class="form-control" name="name" placeholder="Adınız Soyadınız" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input type="email" class="form-control" name="email" placeholder="E-posta Adresiniz" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="subject" placeholder="Konu (Örn: Ürün İadesi Hakkında)" required>
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" class="form-control" placeholder="Mesajınız, şikayetiniz veya öneriniz..." required></textarea>
+                                </div>
+                                <div class="col-12 text-right">
+                                    <button type="submit" class="btn amado-btn">Gönder</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-30 mb-50">
+                <div class="col-12">
+                    <h4 style="margin-bottom: 20px; font-weight: 700;">Konumumuz</h4>
+                    <div class="map-area">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Yahya+Kaptan+Mah,+%C5%9Eehit+Erg%C3%BCn+K%C3%B6nc%C3%BC+Sok,+%C4%B0zmit,+Kocaeli&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div> 
+    </div> 
+
+    <footer class="footer_area clearfix" style="background-color: #222; padding-top: 70px; padding-bottom: 20px; color: #b5b5b5;">
+        <div class="container">
+            <div class="row text-center justify-content-center">
+                
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <div class="footer-logo mb-4">
+                            <a href="index.html"><img src="img/core-img/logo2.png" alt="Campanula" style="max-height: 60px;"></a>
+                        </div>
+                        <p style="font-size: 14px; line-height: 1.6;">Doğayla buluşmanızda yanınızdayız. En kaliteli kamp ekipmanları burada.</p>
+                        <div class="footer-social-info mt-4">
+                            <a href="https://github.com/merwf" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="GitHub"><i class="fa fa-github"></i></a>
+                            <a href="https://www.linkedin.com/in/merve-gazioğlu-047648235" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="LinkedIn"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/elf_merve8/?next=%2F" target="_blank" style="color: #fff; margin: 0 10px; font-size: 20px;" data-toggle="tooltip" title="Instagram"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Kurumsal</h5>
+                        <ul style="padding: 0; list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="duyurular.html" style="color: #ddd; transition: 0.3s;">Duyurular</a></li>
+                            <li style="margin-bottom: 10px;"><a href="hakkimizda.html" style="color: #ddd; transition: 0.3s;">Hakkımızda</a></li>
+                            <li style="margin-bottom: 10px;"><a href="vizyon.html" style="color: #ddd; transition: 0.3s;">Misyon & Vizyon</a></li>
+                            <li style="margin-bottom: 10px;"><a href="iletisim.html" style="color: #ddd; transition: 0.3s;">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Yardım</h5>
+                        <ul style="padding: 0; list-style: none;">
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Sipariş Takibi</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">İade ve Değişim</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Kargo ve Teslimat</a></li>
+                            <li style="margin-bottom: 10px;"><a href="javascript:void(0);" style="color: #999; transition: 0.3s;">Gizlilik Politikası</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-3 mb-5">
+                    <div class="single_widget_area">
+                        <h5 style="color: #fbb710; margin-bottom: 20px; font-size: 18px; text-transform: uppercase;">Bize Ulaşın</h5>
+                        <p style="margin-bottom: 15px;">
+                            <i class="fa fa-map-marker" style="color: #fbb710; display: block; font-size: 24px; margin-bottom: 10px;"></i>
+                            Yahya Kaptan Mah. Şehit Ergün Köncü Sok. No: 12, İzmit/Kocaeli
+                        </p>
+                        <p style="margin-bottom: 15px;">
+                            <span style="display: block;">info@campanula.com</span>
+                            <span style="display: block;">+90 262 123 45 67</span>
+                        </p>
+                        <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 5px; margin-top: 15px;">
+                            <i class="fa fa-clock-o" style="color: #fbb710; margin-right: 5px;"></i>
+                            <span style="font-size: 13px;">Pzt - Cmt: 09:00 - 19:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center;">
+                        <p style="color: #fff; font-size: 14px; margin-bottom: 5px; font-weight: 500;">
+                            Tasarım & Kodlama: Merve Gazioğlu - 231307100
+                        </p>
+                        <p style="font-size: 12px; color: #666;">
+                            Telif Hakkı &copy; <script>document.write(new Date().getFullYear());</script> Campanula Outdoor. Tüm hakları saklıdır.
+                        </p>
+                        <div class="mt-2">
+                            <img src="img/core-img/paypal.png" alt="Visa" style="height: 20px; opacity: 0.7;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/active.js"></script>
+    <script src="js/sepet.js"></script>
+
+    <div id="loadingOverlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.9); z-index:9999; text-align:center;">
+    <div style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);">
+        <img src="img/core-img/loading.gif" alt="İşleniyor..." style="width: 60px;">
+        <h5 style="margin-top:15px; font-weight:700; color:#333;">İşleminiz Yapılıyor...</h5>
+        <p style="color:#666;">Lütfen bekleyiniz.</p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $("#contactForm, #supportForm, #serviceForm").on("submit", function(e) {
+            e.preventDefault(); 
+
+            var $form = $(this);
+            
+            // Form verilerini al
+            var formName = $form.find("input[placeholder*='Ad']").val() || "İsimsiz";
+            var formSubject = $form.find("input[name='subject']").val() || "Destek Talebi"; 
+            var formMessage = $form.find("textarea").val() || "Mesaj içeriği yok.";
+
+            // --- VERİ KAYDETME İŞLEMİ ---
+            var newMessage = {
+                id: Math.floor(Math.random() * 1000),
+                name: formName,
+                subject: formSubject,
+                message: formMessage,
+                date: new Date().toLocaleDateString('tr-TR')
+            };
+
+            // Eski mesajları çek, yeniyi ekle, kaydet
+            var messages = JSON.parse(localStorage.getItem('adminMessages')) || [];
+            messages.push(newMessage);
+            localStorage.setItem('adminMessages', JSON.stringify(messages));
+            // ---------------------------
+
+            // Yükleme ekranını aç (GIF)
+            $("#loadingOverlay").fadeIn();
+
+            setTimeout(function() {
+                $("#loadingOverlay").fadeOut();
+                alert("Mesajınız başarıyla alındı! İlgili müşteri temsilcisine e-posta iletildi. En kısa sürede size dönüş yapılacaktır.");
+                $form[0].reset();
+            }, 2000); 
+        });
+    });
+</script>
+</body>
+</html>

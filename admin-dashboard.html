@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Campanula Yönetim Paneli">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Campanula - Yönetim Paneli</title>
+    <link rel="icon" href="img/core-img/favicon.ico">
+    
+    <link rel="stylesheet" href="css/core-style.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body { background-color: #f8f9fa; font-family: 'Roboto', sans-serif; }
+        
+        /* Sidebar */
+        .sidebar {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 250px;
+            background-color: #222;
+            padding-top: 20px;
+            color: #fff;
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        .sidebar .logo { text-align: center; margin-bottom: 40px; }
+        .sidebar .logo img { max-height: 40px; }
+        .sidebar a {
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 15px;
+            color: #b5b5b5;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #fbb710;
+            color: #fff;
+        }
+        .sidebar a i { margin-right: 10px; width: 20px; text-align: center; }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 250px;
+            padding: 30px 30px 0 30px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .content-wrapper { flex: 1; }
+
+        .card-stat {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border-left: 4px solid #fbb710;
+        }
+        .card-stat h3 { font-size: 28px; font-weight: 700; margin-bottom: 5px; color: #333; }
+        .card-stat p { font-size: 14px; color: #888; margin: 0; }
+        
+        .section-header { margin-bottom: 20px; border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        
+        /* Tables */
+        .admin-table { width: 100%; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .admin-table table { width: 100%; }
+        .admin-table th { background: #333; color: #fff; padding: 15px; font-weight: 500; font-size: 14px; text-align: left; }
+        .admin-table td { padding: 15px; border-bottom: 1px solid #eee; font-size: 14px; vertical-align: middle; }
+        .admin-table tr:last-child td { border-bottom: none; }
+        
+        /* Forms */
+        .form-box { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .btn-admin { background-color: #fbb710; color: #fff; border: none; padding: 10px 20px; cursor: pointer; font-weight: bold; border-radius: 4px; }
+        .btn-admin:hover { background-color: #333; }
+
+        .chart-container { position: relative; height: 300px; width: 100%; }
+        
+        /* Badges */
+        .badge-warning { background-color: #fbb710; color: #000; } 
+        .badge-success { background-color: #28a745; color: #fff; }
+        .badge-primary { background-color: #007bff; color: #fff; }
+        .badge-info { background-color: #17a2b8; color: #fff; }
+
+        /* Footer */
+        .admin-footer {
+            margin-top: 50px;
+            background-color: #222;
+            color: #b5b5b5;
+            padding: 30px 0;
+            border-top: 1px solid #444;
+            width: 100%;
+        }
+
+        /* Scrollable Table Area for Products */
+        .table-scroll {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 991px) {
+            .sidebar { width: 70px; }
+            .sidebar a span { display: none; }
+            .sidebar .logo { display: none; }
+            .main-content { margin-left: 70px; }
+        }
+
+        /* --- MOBİL UYUMLULUK DÜZELTMELERİ --- */
+        @media (max-width: 768px) {
+            /* 1. Sidebar ve Ana İçerik Ayarı */
+            .sidebar { width: 60px; }
+            .sidebar a { padding: 15px 10px; text-align: center; }
+            .sidebar a i { margin-right: 0; font-size: 18px; }
+            .sidebar .logo, .sidebar a span { display: none; } /* İkon moduna geç */
+            
+            .main-content {
+                margin-left: 60px; 
+                padding: 15px 10px; 
+            }
+
+            /* 2. Başlık ve Butonları Alt Alta Al */
+            .d-flex.justify-content-between.align-items-center {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 10px;
+            }
+            .d-flex button {
+                width: 100%;
+            }
+
+            /* 3. Tablo İçi Düzenlemeler */
+            .admin-table th, .admin-table td {
+                white-space: nowrap; 
+                padding: 10px 8px;  
+                font-size: 12px; 
+            }
+            
+            /* Ürün resimlerini mobilde biraz küçültelim */
+            .admin-table img {
+                width: 30px;
+            }
+            
+            /* Aksiyon butonlarını yan yana sıkışık tut */
+            .btn-sm {
+                padding: 2px 6px;
+                font-size: 10px;
+            }
+
+            /* --- MOBİL İÇİN TAM YATAY KAYDIRMA MODU --- */
+            @media (max-width: 991px) {
+                .table td, .table th {
+                    white-space: nowrap; 
+                }
+
+                /* 2. Uzun Mesajlar İçin Ayar */
+                #users .table td small {
+                    display: inline-block;
+                    max-width: 300px; /* 300px'den uzunsa kes */
+                    overflow: hidden;
+                    text-overflow: ellipsis; /* Sonuna ... koy */
+                    white-space: nowrap;
+                }
+
+                /* 3. Kaydırma Alanını Garantiye Al */
+                .table-responsive {
+                    display: block;
+                    width: 100%;
+                    overflow-x: auto; 
+                    -webkit-overflow-scrolling: touch; 
+                    border: 1px solid #eee; 
+                }
+}
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <a href="index.html" style="padding:0; background:none;"><img src="img/core-img/logo2.png" alt=""></a>
+        </div>
+        <a href="#" class="active"><i class="fa fa-tachometer"></i> <span>Panel Özeti</span></a>
+        <a href="#products"><i class="fa fa-shopping-bag"></i> <span>Ürün Yönetimi</span></a>
+        <a href="#announcements"><i class="fa fa-bullhorn"></i> <span>Duyurular</span></a>
+        <a href="#orders"><i class="fa fa-truck"></i> <span>Siparişler</span></a>
+        <a href="#users"><i class="fa fa-envelope"></i> <span>Gelen Mesajlar</span></a>
+        <a href="index.html" style="margin-top: 50px; background: #333;"><i class="fa fa-sign-out"></i> <span>Çıkış Yap</span></a>
+    </div>
+
+    <div class="main-content">
+        <div class="content-wrapper">
+            
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Yönetim Paneli</h2>
+                <div class="user-info">
+                    <span>Merhaba, <strong>Admin</strong></span>
+                    <img src="img/core-img/user.png" style="width: 30px; margin-left: 10px; border-radius: 50%;" alt="">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card-stat">
+                        <h3 id="statProductCount">0</h3>
+                        <p>Toplam Ürün</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-stat" style="border-left-color: #28a745;">
+                        <h3>15.450 TL</h3>
+                        <p>Günlük Ciro</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-stat" style="border-left-color: #17a2b8;">
+                        <h3>0</h3>
+                        <p>Bekleyen Sipariş</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card-stat" style="border-left-color: #dc3545;">
+                        <h3>0</h3>
+                        <p>Yeni Yorum</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-md-8">
+                    <div class="form-box">
+                        <h5 class="section-header">Aylık Satış Grafiği</h5>
+                        <div class="chart-container">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-box">
+                        <h5 class="section-header">Kategori Dağılımı</h5>
+                        <div class="chart-container">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5" id="products">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="mb-0">Ürün Listesi ve Yönetimi</h5>
+                        <button class="btn btn-sm btn-admin" id="addProductBtn">+ Yeni Ürün Ekle</button>
+                    </div>
+                    <div class="admin-table table-scroll table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Görsel</th>
+                                    <th>Ürün Adı</th>
+                                    <th>Kategori</th>
+                                    <th>Fiyat</th>
+                                    <th>Stok</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productTableBody">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5" id="announcements">
+                <div class="col-12 col-lg-6">
+                    <div class="form-box h-100">
+                        <h5 class="section-header">Yeni Duyuru Ekle</h5>
+                        <form id="announcementForm">
+                            <div class="form-group">
+                                <label>Başlık</label>
+                                <input type="text" class="form-control" id="annTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label>İçerik</label>
+                                <textarea class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Dosya (Opsiyonel)</label>
+                                <input type="file" class="form-control-file">
+                            </div>
+                            <button type="submit" class="btn btn-admin btn-block">Yayınla</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="form-box h-100">
+                        <h5 class="section-header">Aktif Duyurular</h5>
+                        <div class="admin-table table-responsive" style="max-height: 320px; overflow-y:auto;">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Tarih</th>
+                                        <th>Başlık</th>
+                                        <th>İşlem</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="announcementTableBody">
+                                    </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5" id="orders">
+                <div class="col-12">
+                    <div class="form-box">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="section-header">Gelen Siparişler</h5>
+                            <button class="btn btn-sm btn-danger" onclick="clearDeliveredOrders()">Teslim Edilenleri Temizle</button>
+                        </div>
+                        <div class="admin-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Sipariş No</th>
+                                        <th>Müşteri</th>
+                                        <th>Tarih</th>
+                                        <th>Tutar</th>
+                                        <th>Durum</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orderTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5" id="users">
+                <div class="col-12">
+                    <div class="form-box">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="section-header">Kullanıcı Mesajları</h5>
+                            <button class="btn btn-sm btn-danger" onclick="clearRepliedMessages()">Cevaplananları Temizle</button>
+                        </div>
+                        <div class="admin-table table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Tarih</th>
+                                        <th>Gönderen</th>
+                                        <th>Konu</th>
+                                        <th>Mesaj</th>
+                                        <th>Durum</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="messageTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <footer class="admin-footer">
+            <div class="container-fluid">
+                <div class="row text-center">
+                    <div class="col-12">
+                        <p style="font-size: 14px; margin-bottom: 5px;">Tasarım & Kodlama: Merve Gazioğlu - 231307100</p>
+                        <p style="font-size: 12px; color: #666;">
+                            Telif Hakkı &copy; 2025 Campanula Outdoor. Tüm hakları saklıdır.
+                        </p>
+                        <img src="img/core-img/paypal.png" alt="Visa" style="height: 20px; opacity: 0.7; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        const ctxSales = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctxSales, {
+            type: 'line',
+            data: {
+                labels: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran'],
+                datasets: [{
+                    label: 'Satışlar (TL)',
+                    data: [45000, 52000, 38000, 64000, 72000, 85000],
+                    backgroundColor: 'rgba(251, 183, 16, 0.2)',
+                    borderColor: 'rgba(251, 183, 16, 1)',
+                    borderWidth: 2,
+                    tension: 0.4
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+
+        const ctxCategory = document.getElementById('categoryChart').getContext('2d');
+        const categoryChart = new Chart(ctxCategory, {
+            type: 'doughnut',
+            data: {
+                labels: ['Çadır', 'Giyim', 'Mutfak', 'Diğer'],
+                datasets: [{
+                    data: [4, 3, 6, 16],
+                    backgroundColor: ['#fbb710', '#333333', '#17a2b8', '#dc3545']
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false }
+        });
+    </script>
+
+    <script>
+        // Shop.html'deki ürünlerin veritabanı simülasyonu
+        const defaultProducts = [
+            { img: "img/product-img/product1.jpg", name: "4 Kişilik Kamp Çadırı", cat: "Çadır", price: "6.290 TL", stock: "Var" },
+            { img: "img/product-img/UckisiCadir3.jpg", name: "3 Kişilik Kamp Çadırı", cat: "Çadır", price: "4.300 TL", stock: "Var" },
+            { img: "img/product-img/ikiKisiCadir3.jpg", name: "2 Kişilik Kamp Çadırı", cat: "Çadır", price: "7.200 TL", stock: "Az" },
+            { img: "img/product-img/AltiKisiCadir4.jpg", name: "6 Kişilik Gölgelikli Çadır", cat: "Çadır", price: "7.800 TL", stock: "Var" },
+            { img: "img/product-img/sandalye.jpg", name: "Kamp Sandalyesi (Katlanır)", cat: "Ekipman", price: "1.200 TL", stock: "Var" },
+            { img: "img/product-img/tabure.jpg", name: "Kamp Taburesi", cat: "Ekipman", price: "450 TL", stock: "Var" },
+            { img: "img/product-img/alcakSandalye.jpg", name: "Alçak Kamp Sandalyesi", cat: "Ekipman", price: "2.000 TL", stock: "Var" },
+            { img: "img/product-img/1L.jpg", name: "Termos 1L", cat: "Mutfak", price: "900 TL", stock: "Var" },
+            { img: "img/product-img/cayTermos2.jpg", name: "Çay Filtreli Termos", cat: "Mutfak", price: "1.000 TL", stock: "Var" },
+            { img: "img/product-img/almatara.jpg", name: "Alüminyum Matara", cat: "Mutfak", price: "450 TL", stock: "Var" },
+            { img: "img/product-img/matara.jpg", name: "Matara 1.2L", cat: "Mutfak", price: "380 TL", stock: "Az" },
+            { img: "img/product-img/tulumHaki1.jpg", name: "Trekking Uyku Tulumu", cat: "Uyku", price: "3.900 TL", stock: "Var" },
+            { img: "img/product-img/kampTulum1.jpg", name: "Kamp Uyku Tulumu", cat: "Uyku", price: "1.500 TL", stock: "Var" },
+            { img: "img/product-img/seyahatYastigi.jpg", name: "Seyahat Yastığı", cat: "Uyku", price: "400 TL", stock: "Var" },
+            { img: "img/product-img/yastik1.jpg", name: "Kamp Yastığı", cat: "Uyku", price: "400 TL", stock: "Var" },
+            { img: "img/product-img/kampLambasi.jpg", name: "Kamp Lambası", cat: "Aydınlatma", price: "1.500 TL", stock: "Var" },
+            { img: "img/product-img/elFeneri1.jpg", name: "El Feneri 900L", cat: "Aydınlatma", price: "2.300 TL", stock: "Var" },
+            { img: "img/product-img/elFeneriMavi1.jpg", name: "El Feneri 150L", cat: "Aydınlatma", price: "750 TL", stock: "Var" },
+            { img: "img/product-img/kafaFeneri1.jpg", name: "Kafa Feneri", cat: "Aydınlatma", price: "280 TL", stock: "Var" },
+            { img: "img/product-img/erkekMont1.jpg", name: "Erkek Kışlık Mont", cat: "Giyim", price: "2.400 TL", stock: "Var" },
+            { img: "img/product-img/kadinMont1.jpg", name: "Kadın Yağmurluk", cat: "Giyim", price: "4.700 TL", stock: "Az" },
+            { img: "img/product-img/unisex.jpg", name: "Polar Gömlek", cat: "Giyim", price: "2.800 TL", stock: "Var" },
+            { img: "img/product-img/cantaTrekking1.jpg", name: "Trekking Sırt Çantası", cat: "Çanta", price: "4.400 TL", stock: "Var" },
+            { img: "img/product-img/cantaHaki.jpg", name: "Avcı Sırt Çantası", cat: "Çanta", price: "3.500 TL", stock: "Var" },
+            { img: "img/product-img/kap.jpg", name: "Yemek Seti 4'lü", cat: "Mutfak", price: "3.000 TL", stock: "Var" },
+            { img: "img/product-img/ocak1.jpg", name: "Ateş Kutusu Ocak", cat: "Mutfak", price: "1.200 TL", stock: "Var" },
+            { img: "img/product-img/caki1.jpg", name: "Çok Amaçlı Çakı", cat: "Aksesuar", price: "1.500 TL", stock: "Var" },
+            { img: "img/product-img/kurek1.jpg", name: "Katlanır Kürek", cat: "Aksesuar", price: "1.150 TL", stock: "Var" },
+            { img: "img/product-img/bant.jpg", name: "Onarım Seti", cat: "Aksesuar", price: "200 TL", stock: "Var" }
+        ];
+
+        $(document).ready(function() {
+            initProducts();
+            initAnnouncements();
+            loadOrders();
+            loadMessages();
+        });
+
+        // -----------------------
+        // ÜRÜN İŞLEMLERİ
+        // -----------------------
+        function initProducts() {
+            if (!localStorage.getItem('adminProducts')) {
+                localStorage.setItem('adminProducts', JSON.stringify(defaultProducts));
+            }
+            renderProductTable();
+        }
+
+        function renderProductTable() {
+            var products = JSON.parse(localStorage.getItem('adminProducts'));
+            var html = "";
+            
+            // Son eklenenler üstte olsun
+            products.reverse().forEach(function(p, index) {
+                var realIndex = products.length - 1 - index; 
+                
+                html += `
+                    <tr>
+                        <td><img src="${p.img}" width="40" style="border-radius:5px;"></td>
+                        <td>${p.name}</td>
+                        <td>${p.cat}</td>
+                        <td>${p.price}</td>
+                        <td><span class="badge ${p.stock === 'Var' ? 'badge-success' : 'badge-warning'}">${p.stock}</span></td>
+                        <td>
+                            <button class="btn btn-sm btn-info" onclick="alert('Düzenleme modu açıldı: ${p.name}')"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-sm btn-danger" onclick="deleteProduct(${realIndex})"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+            });
+            
+            $("#productTableBody").html(html);
+            $("#statProductCount").text(products.length);
+        }
+
+        function deleteProduct(index) {
+            if(confirm("Bu ürünü silmek istediğinize emin misiniz?")) {
+                var products = JSON.parse(localStorage.getItem('adminProducts'));
+                products.splice(index, 1);
+                localStorage.setItem('adminProducts', JSON.stringify(products));
+                renderProductTable();
+            }
+        }
+
+        $("#addProductBtn").click(function() {
+            var newProd = {
+                img: "img/core-img/favicon.ico", // Demo görsel
+                name: "Yeni Eklenen Ürün",
+                cat: "Diğer",
+                price: "1.000 TL",
+                stock: "Var"
+            };
+            var products = JSON.parse(localStorage.getItem('adminProducts'));
+            products.push(newProd); 
+            localStorage.setItem('adminProducts', JSON.stringify(products));
+            renderProductTable();
+            alert("Yeni ürün eklendi!");
+        });
+
+        // -----------------------
+        // DUYURU İŞLEMLERİ
+        // -----------------------
+        function initAnnouncements() {
+            if (!localStorage.getItem('adminAnnouncements')) {
+                var demos = [
+                    {date: "10.12.2025", title: "Kış İndirimi Başladı"},
+                    {date: "05.12.2025", title: "Mağaza Açılışı"},
+                    {date: "28.11.2025", title: "Kamp Eğitimleri"}
+                ];
+                localStorage.setItem('adminAnnouncements', JSON.stringify(demos));
+            }
+            renderAnnouncementTable();
+        }
+
+        function renderAnnouncementTable() {
+            var anns = JSON.parse(localStorage.getItem('adminAnnouncements'));
+            var html = "";
+            
+            anns.reverse().forEach(function(a, index) {
+                var realIndex = anns.length - 1 - index;
+                html += `
+                    <tr>
+                        <td>${a.date}</td>
+                        <td>${a.title}</td>
+                        <td>
+                            <button class="btn btn-sm btn-info py-0" onclick="alert('Düzenle: ${a.title}')"><i class="fa fa-edit"></i></button>
+                            <button class="btn btn-sm btn-danger py-0" onclick="deleteAnnouncement(${realIndex})"><i class="fa fa-trash"></i></button>
+                        </td>
+                    </tr>
+                `;
+            });
+            $("#announcementTableBody").html(html);
+        }
+
+        function deleteAnnouncement(index) {
+            if(confirm("Duyuruyu silmek istiyor musunuz?")) {
+                var anns = JSON.parse(localStorage.getItem('adminAnnouncements'));
+                anns.splice(index, 1);
+                localStorage.setItem('adminAnnouncements', JSON.stringify(anns));
+                renderAnnouncementTable();
+            }
+        }
+
+        $("#announcementForm").on("submit", function(e) {
+            e.preventDefault();
+            var title = $("#annTitle").val();
+            var date = new Date().toLocaleDateString('tr-TR');
+            
+            var anns = JSON.parse(localStorage.getItem('adminAnnouncements'));
+            anns.push({ date: date, title: title });
+            localStorage.setItem('adminAnnouncements', JSON.stringify(anns));
+            
+            alert("Duyuru başarıyla yayınlandı!");
+            this.reset();
+            renderAnnouncementTable();
+        });
+
+        // -----------------------
+        // SİPARİŞ & MESAJ (Mevcut Mantık)
+        // -----------------------
+        function loadOrders() {
+            var orders = JSON.parse(localStorage.getItem('adminOrders')) || [];
+            var html = "";
+            if(orders.length === 0) {
+                html = "<tr><td colspan='5' class='text-center'>Henüz sipariş yok.</td></tr>";
+            } else {
+                orders.slice().reverse().forEach(function(o, index) {
+                    var statusBadge = "";
+                    if (index === 0) statusBadge = '<span class="badge badge-warning">Bekliyor</span>';
+                    else if (index === 1) statusBadge = '<span class="badge badge-info">Hazırlanıyor</span>';
+                    else if (index === 2) statusBadge = '<span class="badge badge-primary">Kargoya Verildi</span>';
+                    else statusBadge = '<span class="badge badge-success">Teslim Edildi</span>';
+
+                    html += `<tr><td><strong>${o.id}</strong></td><td>${o.customer}</td><td>${o.date}</td><td style="color:#28a745; font-weight:bold;">${o.amount}</td><td>${statusBadge}</td></tr>`;
+                });
+            }
+            $("#orderTableBody").html(html);
+            $(".card-stat h3").eq(2).text(orders.length);
+        }
+
+        function clearDeliveredOrders() {
+            if(confirm("Sadece 'Teslim Edildi' durumundaki siparişler silinecektir. Onaylıyor musunuz?")) {
+                var orders = JSON.parse(localStorage.getItem('adminOrders')) || [];
+                if (orders.length > 3) {
+                    var keepOrders = orders.slice(-3); 
+                    localStorage.setItem('adminOrders', JSON.stringify(keepOrders));
+                    alert("Teslim edilen siparişler temizlendi.");
+                } else { alert("Silinecek sipariş bulunamadı."); }
+                loadOrders(); 
+            }
+        }
+
+        function loadMessages() {
+            var messages = JSON.parse(localStorage.getItem('adminMessages')) || [];
+            var html = "";
+            if(messages.length === 0) {
+                html = "<tr><td colspan='5' class='text-center'>Henüz mesaj yok.</td></tr>";
+            } else {
+                messages.slice().reverse().forEach(function(m, index) {
+                    var statusBadge = ((index + 1) % 3 === 0) 
+                        ? '<span class="badge badge-success">Cevaplandı</span>' 
+                        : '<span class="badge badge-warning">Bekliyor</span>';
+                    html += `<tr><td>${m.date}</td><td><strong>${m.name}</strong></td><td>${m.subject}</td><td><small>${m.message}</small></td><td>${statusBadge}</td></tr>`;
+                });
+            }
+            $("#messageTableBody").html(html);
+            $(".card-stat h3").eq(3).text(messages.length);
+        }
+
+        function clearRepliedMessages() {
+            if(confirm("Sadece 'Cevaplandı' durumundaki mesajlar silinecektir. Onaylıyor musunuz?")) {
+                var messages = JSON.parse(localStorage.getItem('adminMessages')) || [];
+                var reversed = messages.slice().reverse();
+                var keptMessagesReversed = reversed.filter(function(msg, index) { return (index + 1) % 3 !== 0; });
+                localStorage.setItem('adminMessages', JSON.stringify(keptMessagesReversed.reverse()));
+                alert("Cevaplanan mesajlar temizlendi.");
+                loadMessages();
+            }
+        }
+    </script>
+</body>
+</html>
