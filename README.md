@@ -1,9 +1,5 @@
 # Campanula - Kamp ve Outdoor Ekipmanları E-Ticaret Platformu
 
-![Course](https://img.shields.it/badge/Ders-Web%20Tasarımı-0056b3)
-![Status](https://img.shields.it/badge/Durum-Tamamlandı-success)
-![Platform](https://img.shields.it/badge/Platform-Web%20(Client--Side)-orange)
-
 **Hazırlayan:** Merve Gazioğlu  
 **Öğrenci No:** 231307100  
 **Bölüm:** Bilişim Sistemleri Mühendisliği  
